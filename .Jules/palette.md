@@ -1,0 +1,3 @@
+## 2024-04-22 - Accessible Icon Buttons & Focus States
+**Learning:** This prototype-driven codebase often lacks basic accessibility for icon-only buttons, which are prevalent in header and table actions. A consistent pattern for focus indicators was needed that aligns with the 'Corporate Modernist' slate/blue theme without cluttering the 'flat' design.
+**Action:** Apply `aria-label`, `title`, and `focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:outline-none` to all icon-only buttons. For buttons in tight containers (like view toggles), use `focus-visible:ring-inset`.
