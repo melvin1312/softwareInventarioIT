@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#7c839b",
+                        "primary-container": "#131b2e",
+                        "outline-variant": "#c6c6cd",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary-fixed": "#00174b",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#818486",
+                        "on-secondary-container": "#fefcff",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "secondary-fixed": "#dbe1ff",
+                        "secondary": "#0051d5",
+                        "tertiary-container": "#191c1e",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "outline": "#76777d",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "primary-fixed": "#dae2fd",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-tint": "#565e74",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container": "#e5eeff",
+                        "on-background": "#0b1c30",
+                        "background": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-primary": "#bec6e0",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "secondary-container": "#316bf3",
+                        "error": "#ba1a1a",
+                        "primary": "#000000",
+                        "on-surface-variant": "#45464d",
+                        "tertiary": "#000000",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-surface": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-margin": "32px",
+                        "card-padding": "20px",
+                        "table-cell-padding": "12px 16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "mono-md": ["monospace"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "mono-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-screen w-[280px] border-r border-slate-200 bg-slate-50 dark:bg-slate-950 flex flex-col py-6 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 bg-blue-600 flex items-center justify-center rounded text-white">
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+</div>
+<div>
+<h1 class="text-lg font-black text-slate-900 dark:text-white tracking-tight">AssetTrack</h1>
+<p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Enterprise Infrastructure</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-inter text-sm font-medium tracking-tight">Dashboard</span>
+</a>
+<!-- Active State: Inventory (Where Asset Registration logically lives) -->
+<a class="flex items-center gap-3 px-4 py-3 text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20 border-r-2 border-blue-600 transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-inter text-sm font-medium tracking-tight">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">swap_horiz</span>
+<span class="font-inter text-sm font-medium tracking-tight">Assignments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">person_off</span>
+<span class="font-inter text-sm font-medium tracking-tight">Offboarding</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-6">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-inter text-sm font-medium tracking-tight">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-inter text-sm font-medium tracking-tight">Support</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 left-[280px] h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 z-40 flex items-center justify-between px-8 w-full">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-blue-500/20">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-0" placeholder="Inventory Management" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+<span class="material-symbols-outlined">history</span>
+</button>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="professional portrait of an IT manager in a modern office setting with natural lighting and corporate attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNL6scCAbAhPJQmQO2Zs6oWEWz3Uzw2dRmYHoLso2kDWWWhVy9cersFfGTD0zdYbEhHeydDX3nYNTGeG2ggZLzV7pCs8JTmjalZ9QiJsW9cnthEGufoxG80RjAJXqnwa6cX0dKPriaN6X-8ZdSan4818hsU3CU9V9PtB9c2A2Oi-0IVITnnLaHj0yqsev5Ftkp2cmZJ886CfzLWiT_8BM-t3CxO-y-1ner05qZGu-MpH4iPpmuiGwPadVyqLoafVnAi5aJgkj2oVg"/>
+<span class="font-inter text-sm font-bold text-slate-600">Administrator Profile</span>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-[280px] pt-16 min-h-screen">
+<div class="p-8 max-w-4xl mx-auto">
+<!-- Header Section -->
+<div class="mb-10 text-center">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-50 text-blue-600 mb-4">
+<span class="material-symbols-outlined text-3xl">add_box</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Registro de Nuevo Activo</h2>
+<p class="font-body-md text-body-md text-on-primary-container">Complete la información técnica y de asignación para el nuevo hardware.</p>
+</div>
+<!-- Form Card -->
+<div class="bg-white border border-slate-200 rounded-lg p-10">
+<form class="space-y-8">
+<!-- Section: General Details -->
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+<div class="col-span-2 sm:col-span-1 flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="asset_name">Nombre del Activo</label>
+<input class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all placeholder:text-slate-400" id="asset_name" placeholder="Ej: MacBook Pro 16" type="text"/>
+</div>
+<div class="col-span-2 sm:col-span-1 flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="type">Tipo de Activo</label>
+<select class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all" id="type">
+<option disabled="" selected="" value="">Seleccione una categoría</option>
+<option value="laptop">Laptop</option>
+<option value="monitor">Monitor</option>
+<option value="mobile">Mobile</option>
+<option value="peripherals">Peripherals</option>
+</select>
+</div>
+<div class="col-span-2 sm:col-span-1 flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="serial_number">Número de Serie</label>
+<div class="relative">
+<input class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all placeholder:text-slate-400" id="serial_number" placeholder="SN-00000000" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-base">qr_code_scanner</span>
+</div>
+</div>
+<div class="col-span-2 sm:col-span-1 flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="purchase_date">Fecha de Compra</label>
+<input class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all" id="purchase_date" type="date"/>
+</div>
+<div class="col-span-2 sm:col-span-1 flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="assigned_user">Usuario Asignado</label>
+<div class="relative">
+<input class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all placeholder:text-slate-400" id="assigned_user" placeholder="Buscar empleado..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">person_search</span>
+</div>
+</div>
+<div class="col-span-2 sm:col-span-1 flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="location">Ubicación</label>
+<select class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all" id="location">
+<option disabled="" selected="" value="">Seleccione sede/oficina</option>
+<option value="sede_central">Sede Central - Madrid</option>
+<option value="sede_norte">Sede Norte - Bilbao</option>
+<option value="remoto">Remoto / Home Office</option>
+</select>
+</div>
+</div>
+<!-- Divider -->
+<div class="border-t border-slate-100 pt-8"></div>
+<!-- Actions -->
+<div class="flex items-center justify-between">
+<button class="px-6 py-2.5 text-blue-600 font-inter text-sm font-semibold hover:bg-blue-50 rounded-lg transition-colors" type="button">
+                            Cancelar
+                        </button>
+<button class="bg-blue-600 text-white px-10 py-3 rounded-lg font-inter text-sm font-bold shadow-sm active:scale-[0.98] transition-transform border-b border-blue-800/20" type="submit">
+                            Guardar Activo
+                        </button>
+</div>
+</form>
+</div>
+<!-- Help/Tips Banner -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="p-4 bg-slate-50 border border-slate-200 rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-blue-600" style="font-variation-settings: 'FILL' 1;">info</span>
+<div>
+<p class="font-inter text-xs font-bold text-slate-700 mb-1">Escaneo Automático</p>
+<p class="text-[11px] text-slate-500 leading-relaxed">Use la app móvil para escanear códigos de barras y precargar datos.</p>
+</div>
+</div>
+<div class="p-4 bg-slate-50 border border-slate-200 rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-blue-600" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div>
+<p class="font-inter text-xs font-bold text-slate-700 mb-1">Garantía Activa</p>
+<p class="text-[11px] text-slate-500 leading-relaxed">El sistema verificará automáticamente el estado de garantía del fabricante.</p>
+</div>
+</div>
+<div class="p-4 bg-slate-50 border border-slate-200 rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-blue-600" style="font-variation-settings: 'FILL' 1;">cloud_sync</span>
+<div>
+<p class="font-inter text-xs font-bold text-slate-700 mb-1">Sincronización</p>
+<p class="text-[11px] text-slate-500 leading-relaxed">Los cambios se reflejarán en el panel de inventario global al instante.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Hidden as per requirement for Details/Form screens) -->
+<!-- Suppressed: Relevance Check - Navigation hidden or focused task priority -->
+</body></html>

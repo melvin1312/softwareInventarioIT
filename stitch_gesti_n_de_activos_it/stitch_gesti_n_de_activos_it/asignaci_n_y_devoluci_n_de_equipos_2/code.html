@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AssetTrack - Gestión de Asignaciones</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#191c1e",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary-container": "#fefcff",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#45464d",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "secondary-container": "#316bf3",
+                        "tertiary-fixed": "#e0e3e5",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-background": "#0b1c30",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#00174b",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "inverse-primary": "#bec6e0",
+                        "primary": "#000000",
+                        "surface-dim": "#cbdbf5",
+                        "surface-tint": "#565e74",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#0b1c30",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-low": "#eff4ff",
+                        "primary-container": "#131b2e",
+                        "primary-fixed": "#dae2fd",
+                        "on-tertiary-container": "#818486",
+                        "secondary-fixed": "#dbe1ff",
+                        "outline": "#76777d",
+                        "on-primary-container": "#7c839b",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "tertiary": "#000000",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "inverse-on-surface": "#eaf1ff",
+                        "background": "#f8f9ff",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-container": "#e5eeff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "secondary": "#0051d5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-margin": "32px",
+                        "gutter": "24px",
+                        "table-cell-padding": "12px 16px",
+                        "card-padding": "20px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "mono-md": ["monospace"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "mono-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-on-surface font-body-md overflow-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-[280px] border-r border-slate-200 bg-slate-50 flex flex-col h-full py-6">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center text-white font-black">AT</div>
+<div>
+<h1 class="text-lg font-black text-slate-900 tracking-tight">AssetTrack</h1>
+<p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Enterprise Infrastructure</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 transition-colors duration-150 mx-2 rounded" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 transition-colors duration-150 mx-2 rounded" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-blue-600 bg-blue-50/50 border-r-2 border-blue-600 mx-2 rounded" href="#">
+<span class="material-symbols-outlined">swap_horiz</span>
+<span>Assignments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 transition-colors duration-150 mx-2 rounded" href="#">
+<span class="material-symbols-outlined">person_off</span>
+<span>Offboarding</span>
+</a>
+</nav>
+<div class="mt-auto px-2 space-y-1 border-t border-slate-200 pt-6">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 transition-colors duration-150 rounded" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 transition-colors duration-150 rounded" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Support</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-[280px] h-16 border-b border-slate-200 bg-white z-40 flex items-center justify-between px-8 w-full">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 border-none rounded-lg text-sm focus:ring-2 focus:ring-blue-500/20 transition-all outline-none" placeholder="Buscar activos, usuarios o licencias..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-600">
+<button class="hover:text-blue-600 transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+<button class="hover:text-blue-600 transition-colors"><span class="material-symbols-outlined">history</span></button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-sm font-semibold text-slate-900 leading-none">Admin IT</p>
+<p class="text-[11px] text-slate-500">Administrator</p>
+</div>
+<img class="w-10 h-10 rounded-full border border-slate-200" data-alt="Professional headshot of a middle-aged IT administrator in a clean office setting, sharp focus and neutral lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjIhlk759g5H6jgRMDRddGlwYxa325dl2T3pPtH1fv2bSodzJhLXhyEF67bIJcch5zclG0QDuLmUEOQX7QGSp2RmWLhV7pzSeW_ibswXL9gXZ_i-CbnVInZOLUqn10AGuwJxStGJfCAePSpbHuT9xYeQgPtqVqJYv34kKYG0Pp-_od1z5L2c_wPGs4A6YnNCZzSCIokUNreC2QKxtTfq9esfnSw2s8w3Qj0ujpXhQcWGlZiGEKSFNkfpfwZ2_RTFKYqEvAYk0PoNk"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-[280px] pt-16 h-screen overflow-y-auto">
+<div class="p-8">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-slate-900">Control de Movimientos</h2>
+<p class="text-slate-500 text-body-md">Gestione la entrega o recepción de activos de hardware y software.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-white border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors rounded">
+                        Ver Historial
+                    </button>
+</div>
+</div>
+<!-- Dashboard Overlays / Forms Bento -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Main Form Section -->
+<div class="col-span-12 lg:col-span-8 bg-white border border-slate-200 rounded-xl p-8">
+<div class="flex items-center gap-6 mb-8 pb-6 border-b border-slate-100">
+<button class="flex items-center gap-2 px-6 py-2 bg-blue-50 text-blue-700 font-bold rounded-full border border-blue-100">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">outbound</span>
+                            Check-out (Asignar)
+                        </button>
+<button class="flex items-center gap-2 px-6 py-2 text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">login</span>
+                            Check-in (Recibir)
+                        </button>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<!-- Select Asset -->
+<div class="space-y-2">
+<label class="text-label-md text-slate-500 uppercase">Seleccionar Activo</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">devices</span>
+<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" placeholder="ID de Activo o No. Serie..." type="text"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] bg-slate-100 px-2 py-1 rounded text-slate-500 font-mono">Buscable</div>
+</div>
+</div>
+<!-- Select User -->
+<div class="space-y-2">
+<label class="text-label-md text-slate-500 uppercase">Asignar a Usuario</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">person</span>
+<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" placeholder="Nombre de empleado o Email..." type="text"/>
+</div>
+</div>
+<!-- Date -->
+<div class="space-y-2">
+<label class="text-label-md text-slate-500 uppercase">Fecha de Asignación</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">calendar_today</span>
+<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" type="date" value="2023-10-27"/>
+</div>
+</div>
+<!-- Status -->
+<div class="space-y-2">
+<label class="text-label-md text-slate-500 uppercase">Prioridad / Urgencia</label>
+<select class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none bg-white">
+<option>Estándar</option>
+<option>Urgente (Reemplazo)</option>
+<option>Nuevo Ingreso</option>
+</select>
+</div>
+</div>
+<!-- Notes -->
+<div class="space-y-2">
+<label class="text-label-md text-slate-500 uppercase">Notas de Condición / Observaciones</label>
+<textarea class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none resize-none" placeholder="Especifique el estado físico, daños previos o componentes incluidos..." rows="4"></textarea>
+</div><div class="grid grid-cols-2 gap-6 mt-6">
+<!-- Serial Number -->
+<div class="space-y-2">
+<label class="text-label-md text-slate-500 uppercase">Número de Serie / Service Tag</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">qr_code</span>
+<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" placeholder="Ej: SN123456789..." type="text"/>
+</div>
+</div>
+<!-- Delivery Location -->
+<div class="space-y-2">
+<label class="text-label-md text-slate-500 uppercase">Ubicación de Entrega</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">location_on</span>
+<select class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none bg-white">
+<option value="">Seleccionar ubicación...</option>
+<option>Oficina Central</option>
+<option>Remoto (Envío a domicilio)</option>
+<option>Sucursal Norte</option>
+<option>Sucursal Sur</option>
+</select>
+</div>
+</div>
+<!-- Estimated Return Date -->
+<div class="space-y-2 col-span-2">
+<label class="text-label-md text-slate-500 uppercase">Fecha Estimada de Devolución (Opcional)</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">event_repeat</span>
+<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" type="date"/>
+</div>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between">
+<div class="flex items-center gap-2 text-sm text-slate-500">
+<span class="material-symbols-outlined text-emerald-500">verified</span>
+<span>Verificación de inventario disponible</span>
+</div>
+<button class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 active:scale-[0.98] transition-all shadow-lg shadow-blue-600/20" type="button">
+                                Asignar Activo
+                            </button>
+</div>
+</form>
+</div>
+<!-- Info Sidebar (Asset Details) -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-slate-900 text-white rounded-xl p-6 relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-blue-500/20 text-blue-300 text-[10px] px-2 py-1 rounded-full border border-blue-500/30 font-bold uppercase tracking-widest">Vista Previa</span>
+<span class="material-symbols-outlined text-slate-400">laptop_mac</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm mb-1">MacBook Pro M2</h3>
+<p class="text-slate-400 text-sm mb-6">TAG-IT-2023-0084</p>
+<div class="grid grid-cols-2 gap-4 text-xs">
+<div class="bg-white/5 p-3 rounded border border-white/10">
+<p class="text-slate-500 mb-1">RAM</p>
+<p class="font-bold">32GB LPDDR5</p>
+</div>
+<div class="bg-white/5 p-3 rounded border border-white/10">
+<p class="text-slate-500 mb-1">Almacenamiento</p>
+<p class="font-bold">1TB SSD</p>
+</div>
+</div>
+</div>
+<div class="absolute -right-10 -bottom-10 opacity-10">
+<span class="material-symbols-outlined text-[160px]">devices</span>
+</div>
+</div>
+<!-- Guidelines -->
+<div class="bg-white border border-slate-200 rounded-xl p-6">
+<h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-600">info</span>
+                            Recordatorios de Política
+                        </h4>
+<ul class="space-y-4">
+<li class="flex gap-3 items-start">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-300 mt-2"></span>
+<p class="text-sm text-slate-600 leading-relaxed">Tome fotografías del activo si presenta daños físicos previos.</p>
+</li>
+<li class="flex gap-3 items-start">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-300 mt-2"></span>
+<p class="text-sm text-slate-600 leading-relaxed">El usuario debe firmar la carta responsiva digital tras la asignación.</p>
+</li>
+<li class="flex gap-3 items-start">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-300 mt-2"></span>
+<p class="text-sm text-slate-600 leading-relaxed">Verifique que el número de serie coincida con la etiqueta física.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Overlay Success State (Visible on trigger, hidden for now as static UI) -->
+<div class="fixed inset-0 bg-slate-950/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
+<div class="bg-white rounded-2xl max-w-md w-full p-8 shadow-2xl border border-slate-200 text-center">
+<div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-slate-900 mb-2">Asignación Exitosa</h3>
+<p class="text-slate-500 mb-8">El activo <strong>TAG-IT-2023-0084</strong> ha sido asignado correctamente a <strong>Marcos Silva</strong>. Se ha enviado un comprobante por correo.</p>
+<div class="space-y-3">
+<button class="w-full bg-slate-900 text-white py-3 rounded-lg font-bold hover:bg-slate-800 transition-colors">Generar Acta de Entrega</button>
+<button class="w-full bg-white border border-slate-300 text-slate-700 py-3 rounded-lg font-bold hover:bg-slate-50 transition-colors">Volver al Dashboard</button>
+</div>
+</div>
+</div>
+</body></html>

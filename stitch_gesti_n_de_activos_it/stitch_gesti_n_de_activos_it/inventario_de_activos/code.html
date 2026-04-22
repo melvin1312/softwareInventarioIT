@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#191c1e",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary-container": "#fefcff",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#45464d",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "secondary-container": "#316bf3",
+                        "tertiary-fixed": "#e0e3e5",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-background": "#0b1c30",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#00174b",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "inverse-primary": "#bec6e0",
+                        "primary": "#000000",
+                        "surface-dim": "#cbdbf5",
+                        "surface-tint": "#565e74",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#0b1c30",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-low": "#eff4ff",
+                        "primary-container": "#131b2e",
+                        "primary-fixed": "#dae2fd",
+                        "on-tertiary-container": "#818486",
+                        "secondary-fixed": "#dbe1ff",
+                        "outline": "#76777d",
+                        "on-primary-container": "#7c839b",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "tertiary": "#000000",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "inverse-on-surface": "#eaf1ff",
+                        "background": "#f8f9ff",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-container": "#e5eeff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "secondary": "#0051d5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-margin": "32px",
+                        "gutter": "24px",
+                        "table-cell-padding": "12px 16px",
+                        "card-padding": "20px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "mono-md": ["monospace"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "mono-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-on-surface">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-screen w-[280px] border-r bg-slate-50 border-slate-200 flex flex-col py-6">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-white" data-icon="inventory_2">inventory_2</span>
+</div>
+<div>
+<h1 class="text-lg font-black text-slate-900 tracking-tight">AssetTrack</h1>
+<p class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Enterprise Infrastructure</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 transition-colors duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-blue-600 bg-blue-50/50 border-r-2 border-blue-600 font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 transition-colors duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span>
+<span class="font-medium text-sm">Assignments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 transition-colors duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="person_off">person_off</span>
+<span class="font-medium text-sm">Offboarding</span>
+</a>
+</nav>
+<div class="px-6 mb-8">
+<button class="w-full py-3 bg-secondary text-white rounded font-bold text-sm shadow-sm active:scale-[0.98] transition-transform">
+                Register New Asset
+            </button>
+</div>
+<div class="px-4 border-t border-slate-200 pt-6 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 transition-colors duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 transition-colors duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-medium text-sm">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-[280px] min-h-screen">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 left-[280px] h-16 border-b bg-white border-slate-200 z-40 flex items-center justify-between px-8">
+<div class="flex items-center gap-4 flex-1">
+<h2 class="font-headline-sm text-slate-900 mr-8">Gestión de Inventario</h2>
+<div class="relative w-full max-w-md group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600" data-icon="search">search</span>
+<input class="w-full bg-slate-50 border border-slate-200 rounded py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" placeholder="Buscar por ID, dispositivo o usuario..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-500">
+<button class="hover:text-blue-600 transition-colors"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="hover:text-blue-600 transition-colors"><span class="material-symbols-outlined" data-icon="history">history</span></button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-slate-900">Admin It</p>
+<p class="text-[10px] text-slate-500">Administrador</p>
+</div>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full border border-slate-200 object-cover" data-alt="professional portrait of a confident IT manager in a modern office setting with natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9J6zATuggYTNEgC5RDAiP47JCGG1KAl-jjTZmr0b-R05NmKAdcmq0AqJ_sc6WaXgHNgst1z2U17KsWDKviSsobT1moI-4UB_3pYhZpnyhfn-WxzDKtV_sRBWUTC-u6dKyBVqmnv5tpZDO-jW0LTcJ23RULsfCzzLXDTtpHexnoxOGQlTn4d--r4VtnXA2G2W92wVPQrCenseas-gTGQRfK8VmMG-0KRLB1X7dIzsy6yZCk9WfyEdosPRf4Ov49jEejwbug_pQxMk"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="pt-24 px-8 pb-12">
+<!-- Filter Bar -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<div class="flex gap-3">
+<div class="flex items-center gap-2 px-3 py-2 bg-white border border-slate-200 rounded text-sm text-slate-600">
+<span class="material-symbols-outlined text-base" data-icon="filter_list">filter_list</span>
+<span class="font-medium">Categoría:</span>
+<select class="border-none p-0 bg-transparent text-slate-900 font-bold focus:ring-0 text-sm">
+<option>Todos</option>
+<option>Laptop</option>
+<option>Mobile</option>
+<option>Monitor</option>
+</select>
+</div>
+<div class="flex items-center gap-2 px-3 py-2 bg-white border border-slate-200 rounded text-sm text-slate-600">
+<span class="material-symbols-outlined text-base" data-icon="error_outline">error_outline</span>
+<span class="font-medium">Estado:</span>
+<select class="border-none p-0 bg-transparent text-slate-900 font-bold focus:ring-0 text-sm">
+<option>Todos</option>
+<option>Activo</option>
+<option>Disponible</option>
+<option>En Mantenimiento</option>
+</select>
+</div>
+<button class="px-4 py-2 text-blue-600 font-bold text-sm hover:bg-blue-50 transition-colors">
+                        Limpiar Filtros
+                    </button>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm text-slate-500 mr-2">Viendo 1-12 de 156 activos</span>
+<div class="flex border border-slate-200 rounded overflow-hidden">
+<button class="p-2 bg-white hover:bg-slate-100 border-r border-slate-200"><span class="material-symbols-outlined text-base" data-icon="grid_view">grid_view</span></button>
+<button class="p-2 bg-slate-100 text-blue-600"><span class="material-symbols-outlined text-base" data-icon="list">list</span></button>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-100 text-slate-500 uppercase tracking-widest font-bold text-[10px]">
+<th class="px-6 py-4 border-b border-slate-200">ID de Activo</th>
+<th class="px-6 py-4 border-b border-slate-200">Nombre del Dispositivo</th>
+<th class="px-6 py-4 border-b border-slate-200">Categoría</th>
+<th class="px-6 py-4 border-b border-slate-200">Usuario Asignado</th>
+<th class="px-6 py-4 border-b border-slate-200">Estado</th>
+<th class="px-6 py-4 border-b border-slate-200">Fecha de Compra</th>
+<th class="px-6 py-4 border-b border-slate-200 text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<!-- Row 1 -->
+<tr class="hover:bg-blue-50 transition-colors group">
+<td class="px-6 py-4 font-mono-md text-slate-900">ASSET-00124</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400" data-icon="laptop">laptop</span>
+<span class="font-medium text-slate-900">MacBook Pro M2 - Space Gray</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-600">Laptop</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-200 flex items-center justify-center text-[10px] font-bold">CR</div>
+<span class="text-sm">Carlos Rodriguez</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 text-[11px] font-bold uppercase">Activo</span>
+</td>
+<td class="px-6 py-4 text-slate-600">12 Ene 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-blue-600"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-blue-50 transition-colors group">
+<td class="px-6 py-4 font-mono-md text-slate-900">ASSET-00129</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400" data-icon="monitor">monitor</span>
+<span class="font-medium text-slate-900">Dell UltraSharp 27" 4K</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-600">Monitor</td>
+<td class="px-6 py-4">
+<span class="text-slate-400 italic">No asignado</span>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-blue-100 text-blue-700 text-[11px] font-bold uppercase">Disponible</span>
+</td>
+<td class="px-6 py-4 text-slate-600">05 Mar 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="px-3 py-1.5 bg-blue-600 text-white text-[11px] font-bold rounded shadow-sm hover:bg-blue-700 transition-colors">
+                                    Entregar
+                                </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-blue-50 transition-colors group">
+<td class="px-6 py-4 font-mono-md text-slate-900">ASSET-00132</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400" data-icon="smartphone">smartphone</span>
+<span class="font-medium text-slate-900">iPhone 14 Enterprise Edition</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-600">Mobile</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-200 flex items-center justify-center text-[10px] font-bold">LM</div>
+<span class="text-sm">Lucía Méndez</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-amber-100 text-amber-700 text-[11px] font-bold uppercase">En Mantenimiento</span>
+</td>
+<td class="px-6 py-4 text-slate-600">18 Abr 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-blue-600"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-blue-50 transition-colors group">
+<td class="px-6 py-4 font-mono-md text-slate-900">ASSET-00140</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400" data-icon="laptop">laptop</span>
+<span class="font-medium text-slate-900">HP EliteBook 840 G8</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-600">Laptop</td>
+<td class="px-6 py-4">
+<span class="text-slate-400 italic">No asignado</span>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-blue-100 text-blue-700 text-[11px] font-bold uppercase">Disponible</span>
+</td>
+<td class="px-6 py-4 text-slate-600">22 Jun 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="px-3 py-1.5 bg-blue-600 text-white text-[11px] font-bold rounded shadow-sm hover:bg-blue-700 transition-colors">
+                                    Entregar
+                                </button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-blue-50 transition-colors group">
+<td class="px-6 py-4 font-mono-md text-slate-900">ASSET-00145</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400" data-icon="keyboard">keyboard</span>
+<span class="font-medium text-slate-900">Logitech MX Keys Combo</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-600">Periférico</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-200 flex items-center justify-center text-[10px] font-bold">JA</div>
+<span class="text-sm">Jorge Alva</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 text-[11px] font-bold uppercase">Activo</span>
+</td>
+<td class="px-6 py-4 text-slate-600">10 Ago 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-blue-600"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-slate-50 flex items-center justify-between border-t border-slate-200">
+<span class="text-xs text-slate-500 font-medium">Mostrando 5 de 156 resultados</span>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 bg-white text-slate-400 hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-blue-600 bg-blue-600 text-white font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 font-bold text-xs">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 font-bold text-xs">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 font-bold text-xs">12</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 bg-white text-slate-400 hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dashboard Snapshot / Stats -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+<div class="bg-white p-5 rounded-xl border border-slate-200 flex items-center gap-4">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined" data-icon="inventory">inventory</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Activos</p>
+<p class="text-2xl font-black text-slate-900">156</p>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-slate-200 flex items-center gap-4">
+<div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Asignados</p>
+<p class="text-2xl font-black text-slate-900">142</p>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-slate-200 flex items-center gap-4">
+<div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-600">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Mantenimiento</p>
+<p class="text-2xl font-black text-slate-900">8</p>
+</div>
+</div>
+<div class="bg-white p-5 rounded-xl border border-slate-200 flex items-center gap-4">
+<div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined" data-icon="sync_alt">sync_alt</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Disponibles</p>
+<p class="text-2xl font-black text-slate-900">6</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

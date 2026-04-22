@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Usuarios - AssetTrack</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#bec6e0",
+                      "on-tertiary-fixed": "#191c1e",
+                      "on-surface": "#0b1c30",
+                      "tertiary": "#000000",
+                      "surface-dim": "#cbdbf5",
+                      "on-primary-container": "#7c839b",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface-variant": "#d3e4fe",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#d3e4fe",
+                      "surface": "#f8f9ff",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#b4c5ff",
+                      "on-tertiary-container": "#818486",
+                      "secondary-fixed": "#dbe1ff",
+                      "on-surface-variant": "#45464d",
+                      "surface-container-low": "#eff4ff",
+                      "surface-container-high": "#dce9ff",
+                      "primary-fixed": "#dae2fd",
+                      "error-container": "#ffdad6",
+                      "primary": "#000000",
+                      "outline": "#76777d",
+                      "on-secondary-fixed": "#00174b",
+                      "surface-container": "#e5eeff",
+                      "on-background": "#0b1c30",
+                      "secondary": "#0051d5",
+                      "inverse-surface": "#213145",
+                      "primary-container": "#131b2e",
+                      "secondary-container": "#316bf3",
+                      "outline-variant": "#c6c6cd",
+                      "on-tertiary-fixed-variant": "#444749",
+                      "inverse-on-surface": "#eaf1ff",
+                      "background": "#f8f9ff",
+                      "primary-fixed-dim": "#bec6e0",
+                      "surface-tint": "#565e74",
+                      "on-primary-fixed": "#131b2e",
+                      "on-secondary-container": "#fefcff",
+                      "surface-bright": "#f8f9ff",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed": "#e0e3e5",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#191c1e",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed-variant": "#003ea8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "card-padding": "20px",
+                      "container-margin": "32px",
+                      "gutter": "24px",
+                      "table-cell-padding": "12px 16px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "mono-md": ["monospace"],
+                      "headline-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "mono-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-active { border-right: 2px solid #316bf3; background-color: rgba(49, 107, 243, 0.05); }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-[280px] border-r border-slate-200 bg-slate-50 dark:bg-slate-950 flex flex-col py-6 z-50">
+<div class="px-6 mb-10 flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-white">inventory_2</span>
+</div>
+<div>
+<h1 class="text-lg font-black text-slate-900 dark:text-white tracking-tight">AssetTrack</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-primary-container font-bold">Enterprise Infrastructure</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-inter text-sm font-medium tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-inter text-sm font-medium tracking-tight">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">swap_horiz</span>
+<span class="font-inter text-sm font-medium tracking-tight">Assignments</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20 border-r-2 border-blue-600 font-inter text-sm font-medium tracking-tight" href="#">
+<span class="material-symbols-outlined">person_add</span>
+<span>User Management</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">person_off</span>
+<span class="font-inter text-sm font-medium tracking-tight">Offboarding</span>
+</a>
+</nav>
+<div class="mt-auto px-6 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-inter text-sm font-medium tracking-tight">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-inter text-sm font-medium tracking-tight">Support</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-[280px] h-16 bg-white border-b border-slate-200 z-40 flex items-center justify-between px-8">
+<div class="flex items-center flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20" placeholder="Buscar usuarios, roles o departamentos..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-500">
+<button class="hover:text-secondary transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+<button class="hover:text-secondary transition-colors"><span class="material-symbols-outlined">history</span></button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-slate-900">Admin IT</p>
+<p class="text-[10px] text-slate-500">Administrator Profile</p>
+</div>
+<img alt="Administrator Profile" class="w-8 h-8 rounded-full border border-slate-200 object-cover" data-alt="Professional IT administrator portrait in a modern office setting with neutral lighting and corporate aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRziWb6s3ZvEKs45ynYeNLnhQTZwoePsCnKalL89kncpIDvsHqHFxR3HPU0w5eoC6NWrqycgii1HnH79OLQ-L4zzyabFhXJS2YUHFiRxITOOHoEmDo_lpJOQ5l4f6BTQG7VOQT-XP7yiStk3Z9hAqoM2eJQfQ9Ja5iV2imSI2jwkUoO_E129VtlwFBUF_PrAw0cv4MPaSLBlEUlGC9fRdoH4XOIEgJ1ykFFnCnay705ibsHG0hDDsyKugHc3oDRpxX5t16ZOenMQI"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-[280px] pt-16 min-h-screen p-8 bg-surface">
+<div class="max-w-7xl mx-auto space-y-8">
+<!-- Page Header -->
+<div class="flex justify-between items-end">
+<div>
+<nav class="flex text-[10px] font-bold text-on-primary-container uppercase tracking-widest mb-1">
+<span>Administración</span>
+<span class="mx-2">/</span>
+<span class="text-secondary">Gestión de Usuarios</span>
+</nav>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Control de Accesos</h2>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 border border-slate-300 bg-white text-slate-700 font-bold text-sm rounded shadow-sm hover:bg-slate-50 transition-colors">
+                        Exportar CSV
+                    </button>
+<button class="px-4 py-2 bg-secondary text-white font-bold text-sm rounded shadow-sm hover:bg-blue-700 transition-all active:scale-[0.98]">
+                        Registrar Nuevo Usuario
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Registration Form Section -->
+<div class="col-span-12 lg:col-span-4 bg-white border border-slate-200 p-card-padding flex flex-col">
+<div class="mb-6">
+<h3 class="font-headline-sm text-headline-sm mb-1">Nuevo Registro</h3>
+<p class="text-sm text-slate-500">Asigne credenciales y roles operativos.</p>
+</div>
+<form class="space-y-4">
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">NOMBRE COMPLETO</label>
+<input class="w-full p-3 bg-slate-50 border border-slate-200 rounded text-sm focus:border-secondary focus:ring-0" placeholder="Ej. Carlos Mendoza" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">CORREO ELECTRÓNICO</label>
+<input class="w-full p-3 bg-slate-50 border border-slate-200 rounded text-sm focus:border-secondary focus:ring-0" placeholder="c.mendoza@empresa.com" type="email"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">DEPARTAMENTO</label>
+<select class="w-full p-3 bg-slate-50 border border-slate-200 rounded text-sm focus:border-secondary focus:ring-0">
+<option>TI</option>
+<option>RRHH</option>
+<option>Finanzas</option>
+<option>Operaciones</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-slate-600 block">ROL DE ACCESO</label>
+<select class="w-full p-3 bg-slate-50 border border-slate-200 rounded text-sm focus:border-secondary focus:ring-0">
+<option>Usuario</option>
+<option>Administrador</option>
+<option>RRHH</option>
+</select>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
+<button class="w-full py-3 bg-secondary text-white font-bold text-sm rounded hover:bg-blue-700 transition-colors" type="submit">
+                                Crear Usuario
+                            </button>
+<button class="w-full py-3 bg-transparent text-secondary font-bold text-sm rounded hover:bg-slate-50 transition-colors" type="button">
+                                Limpiar Formulario
+                            </button>
+</div>
+</form>
+</div>
+<!-- Metrics & Summary Cards -->
+<div class="col-span-12 lg:col-span-8 grid grid-cols-2 gap-6">
+<div class="col-span-2 bg-white border border-slate-200 p-card-padding">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-sm text-headline-sm">Directorio de Usuarios</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-blue-50 text-blue-700 text-[10px] font-black uppercase rounded">42 Activos</span>
+<span class="px-3 py-1 bg-slate-100 text-slate-500 text-[10px] font-black uppercase rounded">5 Inactivos</span>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 border-y border-slate-200">
+<tr>
+<th class="p-table-cell-padding font-label-md text-label-md text-slate-500">USUARIO</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-slate-500">DEPARTAMENTO</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-slate-500">ROL</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-slate-500">ESTADO</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-slate-500 text-right">ACCIONES</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-blue-50/30 transition-colors">
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center font-bold text-xs">AM</div>
+<div>
+<p class="font-bold text-sm">Alejandro Moreno</p>
+<p class="text-[11px] text-slate-500">a.moreno@assettrack.io</p>
+</div>
+</div>
+</td>
+<td class="p-table-cell-padding">
+<span class="text-xs font-medium text-slate-600">TI / Infraestructura</span>
+</td>
+<td class="p-table-cell-padding">
+<span class="px-2 py-0.5 bg-slate-900 text-white text-[10px] font-bold rounded">ADMIN</span>
+</td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+<span class="text-xs text-emerald-700 font-medium">Activo</span>
+</div>
+</td>
+<td class="p-table-cell-padding text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 text-slate-400 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-1.5 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-lg">person_off</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-blue-50/30 transition-colors">
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center font-bold text-xs">LF</div>
+<div>
+<p class="font-bold text-sm">Lucía Fernández</p>
+<p class="text-[11px] text-slate-500">l.fernandez@assettrack.io</p>
+</div>
+</div>
+</td>
+<td class="p-table-cell-padding">
+<span class="text-xs font-medium text-slate-600">RRHH / Talento</span>
+</td>
+<td class="p-table-cell-padding">
+<span class="px-2 py-0.5 bg-slate-100 text-slate-700 text-[10px] font-bold rounded border border-slate-200">RRHH</span>
+</td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+<span class="text-xs text-emerald-700 font-medium">Activo</span>
+</div>
+</td>
+<td class="p-table-cell-padding text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 text-slate-400 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-1.5 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-lg">person_off</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-blue-50/30 transition-colors">
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center font-bold text-xs">RP</div>
+<div>
+<p class="font-bold text-sm">Roberto Paredes</p>
+<p class="text-[11px] text-slate-500">r.paredes@assettrack.io</p>
+</div>
+</div>
+</td>
+<td class="p-table-cell-padding">
+<span class="text-xs font-medium text-slate-600">Finanzas / Pagos</span>
+</td>
+<td class="p-table-cell-padding">
+<span class="px-2 py-0.5 bg-slate-100 text-slate-700 text-[10px] font-bold rounded border border-slate-200">USUARIO</span>
+</td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+<span class="text-xs text-slate-500 font-medium">Inactivo</span>
+</div>
+</td>
+<td class="p-table-cell-padding text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 text-slate-400 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-1.5 text-secondary hover:text-secondary transition-colors"><span class="material-symbols-outlined text-lg">person_check</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-blue-50/30 transition-colors">
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center font-bold text-xs">SG</div>
+<div>
+<p class="font-bold text-sm">Sofía Guerra</p>
+<p class="text-[11px] text-slate-500">s.guerra@assettrack.io</p>
+</div>
+</div>
+</td>
+<td class="p-table-cell-padding">
+<span class="text-xs font-medium text-slate-600">TI / Soporte</span>
+</td>
+<td class="p-table-cell-padding">
+<span class="px-2 py-0.5 bg-slate-100 text-slate-700 text-[10px] font-bold rounded border border-slate-200">USUARIO</span>
+</td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+<span class="text-xs text-emerald-700 font-medium">Activo</span>
+</div>
+</td>
+<td class="p-table-cell-padding text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 text-slate-400 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-1.5 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-lg">person_off</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<p class="text-xs text-slate-500">Mostrando 4 de 47 usuarios registrados</p>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-400 hover:bg-slate-50"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="w-8 h-8 flex items-center justify-center bg-secondary text-white rounded text-xs font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-600 hover:bg-slate-50 text-xs font-bold">2</button>
+<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-600 hover:bg-slate-50 text-xs font-bold">3</button>
+<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-400 hover:bg-slate-50"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Audit Trail & Recent Activity -->
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-12 lg:col-span-7 bg-white border border-slate-200 p-card-padding">
+<h3 class="font-headline-sm text-headline-sm mb-4">Registro de Auditoría</h3>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-3 hover:bg-slate-50 rounded transition-colors">
+<div class="w-2 h-2 rounded-full bg-secondary mt-2"></div>
+<div class="flex-1">
+<p class="text-sm font-bold">Nuevo usuario registrado: Alejandro Moreno</p>
+<p class="text-xs text-slate-500">Realizado por Administrador de TI • Hace 2 horas</p>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">TI-2024-882</span>
+</div>
+<div class="flex items-start gap-4 p-3 hover:bg-slate-50 rounded transition-colors">
+<div class="w-2 h-2 rounded-full bg-error mt-2"></div>
+<div class="flex-1">
+<p class="text-sm font-bold">Cuenta desactivada: Roberto Paredes</p>
+<p class="text-xs text-slate-500">Motivo: Licencia Médica Prolongada • Hace 5 horas</p>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">TI-2024-879</span>
+</div>
+<div class="flex items-start gap-4 p-3 hover:bg-slate-50 rounded transition-colors">
+<div class="w-2 h-2 rounded-full bg-amber-400 mt-2"></div>
+<div class="flex-1">
+<p class="text-sm font-bold">Permisos actualizados: Lucía Fernández</p>
+<p class="text-xs text-slate-500">Rol asignado: RRHH Plus • Ayer 14:30</p>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">TI-2024-875</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 bg-primary-container p-card-padding rounded-lg flex flex-col justify-between overflow-hidden relative">
+<div class="z-10">
+<h3 class="text-white font-headline-sm text-headline-sm mb-2">Cuota de Usuarios</h3>
+<p class="text-slate-400 text-sm mb-6">Su plan Enterprise permite hasta 500 usuarios concurrentes.</p>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-[10px] font-black text-slate-300 uppercase mb-1">
+<span>Asientos Ocupados</span>
+<span>47/500</span>
+</div>
+<div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[9.4%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-black text-slate-300 uppercase mb-1">
+<span>Licencias RRHH</span>
+<span>5/10</span>
+</div>
+<div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 w-[50%]"></div>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-8 py-3 bg-white/10 border border-white/20 text-white text-xs font-bold rounded hover:bg-white/20 transition-all z-10">
+                        Gestionar Plan de Licencias
+                    </button>
+<!-- Decorative background graphic -->
+<div class="absolute -bottom-10 -right-10 opacity-10">
+<span class="material-symbols-outlined text-[160px] text-white">shield_person</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

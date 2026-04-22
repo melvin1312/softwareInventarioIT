@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#bec6e0",
+                      "on-tertiary-fixed": "#191c1e",
+                      "on-surface": "#0b1c30",
+                      "tertiary": "#000000",
+                      "surface-dim": "#cbdbf5",
+                      "on-primary-container": "#7c839b",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface-variant": "#d3e4fe",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#d3e4fe",
+                      "surface": "#f8f9ff",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#b4c5ff",
+                      "on-tertiary-container": "#818486",
+                      "secondary-fixed": "#dbe1ff",
+                      "on-surface-variant": "#45464d",
+                      "surface-container-low": "#eff4ff",
+                      "surface-container-high": "#dce9ff",
+                      "primary-fixed": "#dae2fd",
+                      "error-container": "#ffdad6",
+                      "primary": "#000000",
+                      "outline": "#76777d",
+                      "on-secondary-fixed": "#00174b",
+                      "surface-container": "#e5eeff",
+                      "on-background": "#0b1c30",
+                      "secondary": "#0051d5",
+                      "inverse-surface": "#213145",
+                      "primary-container": "#131b2e",
+                      "secondary-container": "#316bf3",
+                      "outline-variant": "#c6c6cd",
+                      "on-tertiary-fixed-variant": "#444749",
+                      "inverse-on-surface": "#eaf1ff",
+                      "background": "#f8f9ff",
+                      "primary-fixed-dim": "#bec6e0",
+                      "surface-tint": "#565e74",
+                      "on-primary-fixed": "#131b2e",
+                      "on-secondary-container": "#fefcff",
+                      "surface-bright": "#f8f9ff",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed": "#e0e3e5",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#191c1e",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed-variant": "#003ea8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "card-padding": "20px",
+                      "container-margin": "32px",
+                      "gutter": "24px",
+                      "table-cell-padding": "12px 16px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "mono-md": ["monospace"],
+                      "headline-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "mono-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex items-center justify-center p-6">
+<!-- Login Container -->
+<main class="grid lg:grid-cols-2 max-w-5xl w-full bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm min-h-[640px]">
+<!-- Left Column: Visual/Security Messaging -->
+<section class="hidden lg:flex flex-col justify-between p-12 bg-primary-container text-white relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-12">
+<div class="w-10 h-10 bg-secondary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="shield">shield</span>
+</div>
+<span class="text-headline-sm font-black tracking-tight">AssetTrack</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg mb-6">Protección robusta para su infraestructura empresarial</h1>
+<p class="text-body-lg text-on-primary-container leading-relaxed">
+                    Nuestra plataforma utiliza encriptación de grado industrial y protocolos de seguridad avanzados para garantizar que sus activos estén siempre bajo supervisión experta.
+                </p>
+</div>
+<div class="mt-auto relative z-10 flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="verified_user">verified_user</span>
+<div>
+<p class="text-label-md uppercase tracking-wider font-bold">Certificación ISO 27001</p>
+<p class="text-body-md opacity-70">Sistema de Gestión de Seguridad de la Información</p>
+</div>
+</div>
+<!-- Background Aesthetic -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 right-0 w-96 h-96 bg-secondary blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-80 h-80 bg-secondary blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2"></div>
+</div>
+<div class="absolute inset-0 opacity-5">
+<img alt="Data center" class="w-full h-full object-cover grayscale" data-alt="Dark abstract view of a professional server room with glowing blue led lights on networking equipment in a secure data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOfNPOyzYNulyTqc_5aRJ6XlQbgFE8WJgfm7qZWcVcVzpRAmmdf-BvOvHCLF0nu7dMZbxsg8ubPWhwC5KjVWaPgtRqDusiXdsrL_BhqnINOqPuf2awUYXfohTb5eysFSnz0zZqvwVXISDU10xe-UWSCOAp9qhFcYRJElNu5EdQL9dDFp43XlRRKkrolxaAuo2fgNQXzybp1kpeOa0tHID4dJHdZ6ch_ik3dv7F9OjP3n_UNXxiRSZnGrN28sVJcNY8mQXKhFyRxO0"/>
+</div>
+</section>
+<!-- Right Column: Login Form -->
+<section class="flex flex-col justify-center p-8 md:p-16 bg-surface-container-lowest">
+<div class="w-full max-w-sm mx-auto">
+<div class="lg:hidden flex items-center gap-2 mb-8">
+<span class="material-symbols-outlined text-secondary" data-icon="shield">shield</span>
+<span class="text-headline-sm font-black text-on-surface tracking-tight">AssetTrack</span>
+</div>
+<div class="mb-10">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-2">Bienvenido de nuevo</h2>
+<p class="text-body-md text-on-surface-variant">Ingrese sus credenciales corporativas para acceder al panel de control.</p>
+</div>
+<form class="space-y-6">
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase" for="email">Correo Corporativo</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="email" name="email" placeholder="ejemplo@empresa.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase" for="password">Contraseña</label>
+<a class="text-label-md text-secondary hover:underline font-bold transition-colors" href="#">¿Olvidó su contraseña?</a>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center">
+<input class="h-4 w-4 text-secondary focus:ring-secondary border-outline-variant rounded transition-all" id="remember" name="remember" type="checkbox"/>
+<label class="ml-2 block text-body-md text-on-surface-variant" for="remember">Recordarme en este dispositivo</label>
+</div>
+<!-- Submit Button -->
+<button class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white font-label-md rounded-lg shadow-sm active:scale-[0.98] transition-all duration-150" type="submit">
+<span>Iniciar Sesión</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Help Link -->
+<div class="mt-12 pt-8 border-t border-outline-variant text-center">
+<p class="text-body-md text-on-surface-variant">
+                        ¿Problemas para acceder? 
+                        <a class="text-secondary font-bold hover:underline" href="#">Contactar a soporte IT</a>
+</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Subtly floating security badge for mobile/desktop background -->
+<div class="fixed bottom-8 right-8 pointer-events-none opacity-20 lg:opacity-40 select-none">
+<div class="flex flex-col items-end">
+<span class="font-mono-md text-mono-md uppercase tracking-tighter text-on-surface-variant">AssetTrack Security Engine</span>
+<span class="font-mono-md text-mono-md text-on-surface-variant">Ver. 4.2.0-Production</span>
+</div>
+</div>
+</body></html>
