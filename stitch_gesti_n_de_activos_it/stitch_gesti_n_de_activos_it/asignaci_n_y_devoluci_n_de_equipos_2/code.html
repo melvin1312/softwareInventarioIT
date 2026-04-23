@@ -186,15 +186,16 @@
 <!-- Main Form Section -->
 <div class="col-span-12 lg:col-span-8 bg-white border border-slate-200 rounded-xl p-8">
 <div class="flex items-center gap-6 mb-8 pb-6 border-b border-slate-100">
-<button class="flex items-center gap-2 px-6 py-2 bg-blue-50 text-blue-700 font-bold rounded-full border border-blue-100">
+<button id="tab-checkout" class="flex items-center gap-2 px-6 py-2 bg-blue-50 text-blue-700 font-bold rounded-full border border-blue-100">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">outbound</span>
                             Check-out (Asignar)
                         </button>
-<button class="flex items-center gap-2 px-6 py-2 text-slate-400 hover:text-slate-600 transition-colors">
+<button id="tab-checkin" class="flex items-center gap-2 px-6 py-2 text-slate-400 hover:text-slate-600 transition-colors">
 <span class="material-symbols-outlined">login</span>
                             Check-in (Recibir)
                         </button>
 </div>
+<div id="container-checkout">
 <form class="space-y-6">
 <div class="grid grid-cols-2 gap-6">
 <!-- Select Asset -->
@@ -202,7 +203,7 @@
 <label class="text-label-md text-slate-500 uppercase">Seleccionar Activo</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">devices</span>
-<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" placeholder="ID de Activo o No. Serie..." type="text"/>
+<input id="input-asset-id" class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" placeholder="ID de Activo o No. Serie..." type="text"/>
 <div class="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] bg-slate-100 px-2 py-1 rounded text-slate-500 font-mono">Buscable</div>
 </div>
 </div>
@@ -211,7 +212,7 @@
 <label class="text-label-md text-slate-500 uppercase">Asignar a Usuario</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">person</span>
-<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" placeholder="Nombre de empleado o Email..." type="text"/>
+<input id="input-user-name" class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" placeholder="Nombre de empleado o Email..." type="text"/>
 </div>
 </div>
 <!-- Date -->
@@ -273,11 +274,19 @@
 <span class="material-symbols-outlined text-emerald-500">verified</span>
 <span>Verificación de inventario disponible</span>
 </div>
-<button class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 active:scale-[0.98] transition-all shadow-lg shadow-blue-600/20" type="button">
+<button id="btn-assign-asset" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 active:scale-[0.98] transition-all shadow-lg shadow-blue-600/20" type="button">
                                 Asignar Activo
                             </button>
 </div>
 </form>
+</div>
+<div id="container-checkin" class="hidden">
+<div class="py-20 text-center border-2 border-dashed border-slate-200 rounded-xl">
+<span class="material-symbols-outlined text-5xl text-slate-300 mb-4">login</span>
+<h3 class="text-xl font-bold text-slate-900 mb-2">Formulario de Recepción</h3>
+<p class="text-slate-500 max-w-sm mx-auto">El módulo de Check-in (Recibir) está siendo configurado. Pronto podrá gestionar la recepción de activos aquí.</p>
+</div>
+</div>
 </div>
 <!-- Info Sidebar (Asset Details) -->
 <div class="col-span-12 lg:col-span-4 space-y-6">
@@ -330,17 +339,72 @@
 </div>
 </main>
 <!-- Overlay Success State (Visible on trigger, hidden for now as static UI) -->
-<div class="fixed inset-0 bg-slate-950/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
+<div id="success-modal" class="fixed inset-0 bg-slate-950/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
 <div class="bg-white rounded-2xl max-w-md w-full p-8 shadow-2xl border border-slate-200 text-center">
 <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
 <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 </div>
 <h3 class="text-headline-md font-headline-md text-slate-900 mb-2">Asignación Exitosa</h3>
-<p class="text-slate-500 mb-8">El activo <strong>TAG-IT-2023-0084</strong> ha sido asignado correctamente a <strong>Marcos Silva</strong>. Se ha enviado un comprobante por correo.</p>
+<p class="text-slate-500 mb-8">El activo <strong id="modal-asset-id">TAG-IT-2023-0084</strong> ha sido asignado correctamente a <strong id="modal-user-name">Marcos Silva</strong>. Se ha enviado un comprobante por correo.</p>
 <div class="space-y-3">
-<button class="w-full bg-slate-900 text-white py-3 rounded-lg font-bold hover:bg-slate-800 transition-colors">Generar Acta de Entrega</button>
-<button class="w-full bg-white border border-slate-300 text-slate-700 py-3 rounded-lg font-bold hover:bg-slate-50 transition-colors">Volver al Dashboard</button>
+<button id="btn-close-modal-1" class="w-full bg-slate-900 text-white py-3 rounded-lg font-bold hover:bg-slate-800 transition-colors">Generar Acta de Entrega</button>
+<button id="btn-close-modal-2" class="w-full bg-white border border-slate-300 text-slate-700 py-3 rounded-lg font-bold hover:bg-slate-50 transition-colors">Volver al Dashboard</button>
 </div>
 </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Tab switching logic
+        const tabCheckout = document.getElementById('tab-checkout');
+        const tabCheckin = document.getElementById('tab-checkin');
+        const containerCheckout = document.getElementById('container-checkout');
+        const containerCheckin = document.getElementById('container-checkin');
+
+        const setActiveTab = (activeTab, inactiveTab, activeContainer, inactiveContainer) => {
+            activeTab.classList.add('bg-blue-50', 'text-blue-700', 'font-bold', 'border-blue-100');
+            activeTab.classList.remove('text-slate-400', 'hover:text-slate-600');
+            inactiveTab.classList.remove('bg-blue-50', 'text-blue-700', 'font-bold', 'border-blue-100');
+            inactiveTab.classList.add('text-slate-400', 'hover:text-slate-600');
+            activeContainer.classList.remove('hidden');
+            inactiveContainer.classList.add('hidden');
+        };
+
+        tabCheckout.addEventListener('click', () => {
+            setActiveTab(tabCheckout, tabCheckin, containerCheckout, containerCheckin);
+        });
+
+        tabCheckin.addEventListener('click', () => {
+            setActiveTab(tabCheckin, tabCheckout, containerCheckin, containerCheckout);
+        });
+
+        // Form submission logic
+        const btnAssignAsset = document.getElementById('btn-assign-asset');
+        const successModal = document.getElementById('success-modal');
+        const modalAssetId = document.getElementById('modal-asset-id');
+        const modalUserName = document.getElementById('modal-user-name');
+        const inputAssetId = document.getElementById('input-asset-id');
+        const inputUserName = document.getElementById('input-user-name');
+
+        btnAssignAsset.addEventListener('click', () => {
+            const assetId = inputAssetId.value || 'N/A';
+            const userName = inputUserName.value || 'N/A';
+
+            modalAssetId.textContent = assetId;
+            modalUserName.textContent = userName;
+
+            successModal.classList.remove('hidden');
+        });
+
+        // Modal closing logic
+        const btnCloseModal1 = document.getElementById('btn-close-modal-1');
+        const btnCloseModal2 = document.getElementById('btn-close-modal-2');
+
+        const closeModal = () => {
+            successModal.classList.add('hidden');
+        };
+
+        btnCloseModal1.addEventListener('click', closeModal);
+        btnCloseModal2.addEventListener('click', closeModal);
+    });
+</script>
 </body></html>
