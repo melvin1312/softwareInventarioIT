@@ -1,0 +1,3 @@
+## 2026-04-26 - Standardized Accessibility and Focus Patterns
+**Learning:** High-density corporate IT dashboards often lack clear keyboard navigation indicators and skip links, which are critical for accessibility. Standardizing focus-visible styles (e.g., `focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:outline-none`) and adding "Skip to content" links significantly improves the UX for keyboard users. Additionally, icon-only buttons require both `aria-label` for screen readers and `title` for hover tooltips to ensure clarity.
+**Action:** Always implement a skip-to-content link and consistent `focus-visible` styling on all interactive elements. Ensure icon-only buttons have descriptive ARIA labels and titles.
