@@ -155,32 +155,32 @@
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
 <span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="email" name="email" placeholder="ejemplo@empresa.com" required="" type="email"/>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none transition-all" id="email" name="email" placeholder="ejemplo@empresa.com" required="" type="email"/>
 </div>
 </div>
 <!-- Password Field -->
 <div class="space-y-2">
 <div class="flex justify-between items-center">
 <label class="font-label-md text-label-md text-on-surface-variant uppercase" for="password">Contraseña</label>
-<a class="text-label-md text-secondary hover:underline font-bold transition-colors" href="#">¿Olvidó su contraseña?</a>
+<a class="text-label-md text-secondary hover:underline font-bold transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" href="#">¿Olvidó su contraseña?</a>
 </div>
 <div class="relative group">
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
 <span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
-<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button">
+<input class="block w-full pl-10 pr-10 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none transition-all" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button aria-label="Mostrar contraseña" class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded-r-lg" id="toggle-password" title="Mostrar contraseña" type="button">
 <span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
 </button>
 </div>
 </div>
 <!-- Remember Me -->
 <div class="flex items-center">
-<input class="h-4 w-4 text-secondary focus:ring-secondary border-outline-variant rounded transition-all" id="remember" name="remember" type="checkbox"/>
+<input class="h-4 w-4 text-secondary focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none border-outline-variant rounded transition-all" id="remember" name="remember" type="checkbox"/>
 <label class="ml-2 block text-body-md text-on-surface-variant" for="remember">Recordarme en este dispositivo</label>
 </div>
 <!-- Submit Button -->
-<button class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white font-label-md rounded-lg shadow-sm active:scale-[0.98] transition-all duration-150" type="submit">
+<button class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white font-label-md rounded-lg shadow-sm active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none transition-all duration-150" type="submit">
 <span>Iniciar Sesión</span>
 <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
 </button>
@@ -202,4 +202,24 @@
 <span class="font-mono-md text-mono-md text-on-surface-variant">Ver. 4.2.0-Production</span>
 </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const passwordInput = document.getElementById('password');
+        const toggleButton = document.getElementById('toggle-password');
+        const toggleIcon = toggleButton.querySelector('.material-symbols-outlined');
+
+        toggleButton.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+
+            // Update icon
+            toggleIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+
+            // Update labels
+            const label = isPassword ? 'Ocultar contraseña' : 'Mostrar contraseña';
+            toggleButton.setAttribute('aria-label', label);
+            toggleButton.setAttribute('title', label);
+        });
+    });
+</script>
 </body></html>
