@@ -1,0 +1,3 @@
+## 2025-05-14 - Interactive Element Focus and Password Toggles
+**Learning:** In prototype-heavy environments (static HTML), password visibility toggles are often purely cosmetic. Micro-UX improvements must include the actual logic (input type switching) and ARIA state updates to be functional. Additionally, standardized focus indicators using Tailwind `focus-visible` are critical for keyboard accessibility when custom shadows or borders might obscure default browser outlines.
+**Action:** Always check if 'interactive' icons in prototypes have backing scripts. Implement a consistent focus-ring pattern (e.g., `focus-visible:ring-2 focus-visible:ring-secondary`) to ensure WCAG compliance for focus visibility.
