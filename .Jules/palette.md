@@ -1,0 +1,3 @@
+## 2026-05-11 - [Accessibility: Skip-to-Content Link implementation]
+**Learning:** In dashboards with persistent sidebars and headers, a "Skip to Main Content" link is a critical accessibility bridge for keyboard and screen reader users. Using `sr-only focus:not-sr-only` is the standard pattern, but it requires explicit positioning (e.g., `focus:fixed`) because `not-sr-only` resets the position to `static`, which might hide the link behind fixed headers.
+**Action:** Always verify that skip-links are not just visible, but also correctly layered (z-index) and positioned so they aren't obscured by fixed-position UI elements.
