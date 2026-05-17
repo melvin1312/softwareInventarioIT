@@ -1,0 +1,3 @@
+## 2025-05-15 - Skip-to-Content Implementation in Fixed Layouts
+**Learning:** In layouts with fixed sidebars (often z-50), skip-to-content links must use explicit positioning (fixed/absolute) and a higher z-index (e.g., z-[100]) to be visible when focused. Additionally, the target element (<main>) requires `tabindex="-1"` to ensure programmatic focus is moved correctly across all browsers, particularly when using fragment identifiers (#) for navigation.
+**Action:** When implementing 'Saltar al contenido principal' links, use the pattern `sr-only focus:not-sr-only focus:fixed focus:z-[100]` and ensure the target element has a corresponding ID and `tabindex="-1"`.
