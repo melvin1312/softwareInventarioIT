@@ -1,0 +1,3 @@
+## 2024-06-06 - Implementación de Skip Link (Saltar al contenido principal)
+**Learning:** En interfaces con navegación lateral fija (como AssetTrack), los usuarios de teclado deben tabular a través de todos los enlaces del menú antes de llegar al contenido. Un "Skip Link" mejora significativamente la eficiencia de navegación.
+**Action:** Implementar siempre un enlace "Saltar al contenido principal" como el primer hijo del `<body>`, usando `sr-only focus:not-sr-only` y asegurando un `z-index` alto para que sea visible sobre barras laterales fijas. El objetivo debe tener un `id` correspondiente y `tabindex="-1"`.
