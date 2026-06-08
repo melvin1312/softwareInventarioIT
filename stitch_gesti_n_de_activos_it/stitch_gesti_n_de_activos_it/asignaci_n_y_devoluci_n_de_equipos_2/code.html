@@ -199,33 +199,33 @@
 <div class="grid grid-cols-2 gap-6">
 <!-- Select Asset -->
 <div class="space-y-2">
-<label class="text-label-md text-slate-500 uppercase">Seleccionar Activo</label>
+<label class="text-label-md text-slate-500 uppercase" for="asset-selection">Seleccionar Activo</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">devices</span>
-<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" placeholder="ID de Activo o No. Serie..." type="text"/>
+<input class="w-full pl-10 pr-20 py-3 border border-slate-200 rounded-lg focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none focus:border-blue-600 transition-all outline-none" id="asset-selection" placeholder="ID de Activo o No. Serie..." type="text"/>
 <div class="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] bg-slate-100 px-2 py-1 rounded text-slate-500 font-mono">Buscable</div>
 </div>
 </div>
 <!-- Select User -->
 <div class="space-y-2">
-<label class="text-label-md text-slate-500 uppercase">Asignar a Usuario</label>
+<label class="text-label-md text-slate-500 uppercase" for="user-assignment">Asignar a Usuario</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">person</span>
-<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" placeholder="Nombre de empleado o Email..." type="text"/>
+<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none focus:border-blue-600 transition-all outline-none" id="user-assignment" placeholder="Nombre de empleado o Email..." type="text"/>
 </div>
 </div>
 <!-- Date -->
 <div class="space-y-2">
-<label class="text-label-md text-slate-500 uppercase">Fecha de Asignación</label>
+<label class="text-label-md text-slate-500 uppercase" for="assignment-date">Fecha de Asignación</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">calendar_today</span>
-<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" type="date" value="2023-10-27"/>
+<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none focus:border-blue-600 transition-all outline-none" id="assignment-date" type="date" value="2023-10-27"/>
 </div>
 </div>
 <!-- Status -->
 <div class="space-y-2">
-<label class="text-label-md text-slate-500 uppercase">Prioridad / Urgencia</label>
-<select class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none bg-white">
+<label class="text-label-md text-slate-500 uppercase" for="priority">Prioridad / Urgencia</label>
+<select class="w-full px-4 py-3 border border-slate-200 rounded-lg focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none focus:border-blue-600 transition-all outline-none bg-white" id="priority">
 <option>Estándar</option>
 <option>Urgente (Reemplazo)</option>
 <option>Nuevo Ingreso</option>
@@ -234,23 +234,23 @@
 </div>
 <!-- Notes -->
 <div class="space-y-2">
-<label class="text-label-md text-slate-500 uppercase">Notas de Condición / Observaciones</label>
-<textarea class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none resize-none" placeholder="Especifique el estado físico, daños previos o componentes incluidos..." rows="4"></textarea>
+<label class="text-label-md text-slate-500 uppercase" for="notes">Notas de Condición / Observaciones</label>
+<textarea class="w-full px-4 py-3 border border-slate-200 rounded-lg focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none focus:border-blue-600 transition-all outline-none resize-none" id="notes" placeholder="Especifique el estado físico, daños previos o componentes incluidos..." rows="4"></textarea>
 </div><div class="grid grid-cols-2 gap-6 mt-6">
 <!-- Serial Number -->
 <div class="space-y-2">
-<label class="text-label-md text-slate-500 uppercase">Número de Serie / Service Tag</label>
+<label class="text-label-md text-slate-500 uppercase" for="serial-number-check">Número de Serie / Service Tag</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">qr_code</span>
-<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" placeholder="Ej: SN123456789..." type="text"/>
+<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none focus:border-blue-600 transition-all outline-none" id="serial-number-check" placeholder="Ej: SN123456789..." type="text"/>
 </div>
 </div>
 <!-- Delivery Location -->
 <div class="space-y-2">
-<label class="text-label-md text-slate-500 uppercase">Ubicación de Entrega</label>
+<label class="text-label-md text-slate-500 uppercase" for="delivery-location">Ubicación de Entrega</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">location_on</span>
-<select class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none bg-white">
+<select class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none focus:border-blue-600 transition-all outline-none bg-white" id="delivery-location">
 <option value="">Seleccionar ubicación...</option>
 <option>Oficina Central</option>
 <option>Remoto (Envío a domicilio)</option>
@@ -261,10 +261,10 @@
 </div>
 <!-- Estimated Return Date -->
 <div class="space-y-2 col-span-2">
-<label class="text-label-md text-slate-500 uppercase">Fecha Estimada de Devolución (Opcional)</label>
+<label class="text-label-md text-slate-500 uppercase" for="return-date">Fecha Estimada de Devolución (Opcional)</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">event_repeat</span>
-<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" type="date"/>
+<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none focus:border-blue-600 transition-all outline-none" id="return-date" type="date"/>
 </div>
 </div>
 </div>
