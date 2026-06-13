@@ -1,0 +1,3 @@
+## 2025-05-14 - Standardized Dashboard Keyboard Accessibility
+**Learning:** In dashboards with fixed sidebars and headers, keyboard users can become "trapped" in navigation before reaching the main content. Standardizing focus indicators with `focus-visible:ring-2` and providing a 'Skip to Main Content' link significantly improves the navigation flow.
+**Action:** Always insert a skip-link as the first child of the `<body>` and apply `focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none` to all interactive elements to ensure high-contrast, accessible focus states.
