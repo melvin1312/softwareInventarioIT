@@ -105,6 +105,9 @@
     </style>
 </head>
 <body class="bg-surface font-body-md text-on-surface">
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:ring-2 focus:ring-secondary focus:ring-offset-2" href="#main-content">
+    Saltar al contenido principal
+</a>
 <!-- SideNavBar -->
 <aside class="fixed left-0 top-0 h-screen w-[280px] border-r border-slate-200 bg-slate-50 dark:bg-slate-950 flex flex-col py-6 z-50">
 <div class="px-6 mb-10 flex items-center gap-3">
@@ -117,33 +120,33 @@
 </div>
 </div>
 <nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" href="#">
 <span class="material-symbols-outlined">dashboard</span>
 <span class="font-inter text-sm font-medium tracking-tight">Dashboard</span>
 </a>
-<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" href="#">
 <span class="material-symbols-outlined">inventory_2</span>
 <span class="font-inter text-sm font-medium tracking-tight">Inventory</span>
 </a>
-<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" href="#">
 <span class="material-symbols-outlined">swap_horiz</span>
 <span class="font-inter text-sm font-medium tracking-tight">Assignments</span>
 </a>
-<a class="flex items-center gap-3 px-6 py-3 text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20 border-r-2 border-blue-600 font-inter text-sm font-medium tracking-tight" href="#">
+<a class="flex items-center gap-3 px-6 py-3 text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20 border-r-2 border-blue-600 font-inter text-sm font-medium tracking-tight focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" href="#">
 <span class="material-symbols-outlined">person_add</span>
 <span>User Management</span>
 </a>
-<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" href="#">
 <span class="material-symbols-outlined">person_off</span>
 <span class="font-inter text-sm font-medium tracking-tight">Offboarding</span>
 </a>
 </nav>
 <div class="mt-auto px-6 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" href="#">
 <span class="material-symbols-outlined">settings</span>
 <span class="font-inter text-sm font-medium tracking-tight">Settings</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" href="#">
 <span class="material-symbols-outlined">help</span>
 <span class="font-inter text-sm font-medium tracking-tight">Support</span>
 </a>
@@ -154,13 +157,13 @@
 <div class="flex items-center flex-1">
 <div class="relative w-full max-w-md">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
-<input class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20" placeholder="Buscar usuarios, roles o departamentos..." type="text"/>
+<input aria-label="Buscar usuarios, roles o departamentos" class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded text-sm focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" placeholder="Buscar usuarios, roles o departamentos..." type="text"/>
 </div>
 </div>
 <div class="flex items-center gap-6">
 <div class="flex items-center gap-4 text-slate-500">
-<button class="hover:text-secondary transition-colors"><span class="material-symbols-outlined">notifications</span></button>
-<button class="hover:text-secondary transition-colors"><span class="material-symbols-outlined">history</span></button>
+<button aria-label="Notificaciones" class="hover:text-secondary transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" title="Notificaciones"><span class="material-symbols-outlined">notifications</span></button>
+<button aria-label="Historial de actividad" class="hover:text-secondary transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" title="Historial de actividad"><span class="material-symbols-outlined">history</span></button>
 </div>
 <div class="h-8 w-[1px] bg-slate-200"></div>
 <div class="flex items-center gap-3">
@@ -173,7 +176,7 @@
 </div>
 </header>
 <!-- Main Content -->
-<main class="ml-[280px] pt-16 min-h-screen p-8 bg-surface">
+<main class="ml-[280px] pt-16 min-h-screen p-8 bg-surface outline-none" id="main-content" tabindex="-1">
 <div class="max-w-7xl mx-auto space-y-8">
 <!-- Page Header -->
 <div class="flex justify-between items-end">
@@ -186,10 +189,10 @@
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Control de Accesos</h2>
 </div>
 <div class="flex gap-3">
-<button class="px-4 py-2 border border-slate-300 bg-white text-slate-700 font-bold text-sm rounded shadow-sm hover:bg-slate-50 transition-colors">
+<button class="px-4 py-2 border border-slate-300 bg-white text-slate-700 font-bold text-sm rounded shadow-sm hover:bg-slate-50 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none">
                         Exportar CSV
                     </button>
-<button class="px-4 py-2 bg-secondary text-white font-bold text-sm rounded shadow-sm hover:bg-blue-700 transition-all active:scale-[0.98]">
+<button class="px-4 py-2 bg-secondary text-white font-bold text-sm rounded shadow-sm hover:bg-blue-700 transition-all active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none">
                         Registrar Nuevo Usuario
                     </button>
 </div>
@@ -204,17 +207,17 @@
 </div>
 <form class="space-y-4">
 <div class="space-y-1.5">
-<label class="font-label-md text-label-md text-slate-600 block">NOMBRE COMPLETO</label>
-<input class="w-full p-3 bg-slate-50 border border-slate-200 rounded text-sm focus:border-secondary focus:ring-0" placeholder="Ej. Carlos Mendoza" type="text"/>
+<label class="font-label-md text-label-md text-slate-600 block" for="full-name">NOMBRE COMPLETO</label>
+<input class="w-full p-3 bg-slate-50 border border-slate-200 rounded text-sm focus:border-secondary focus:ring-0 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" id="full-name" placeholder="Ej. Carlos Mendoza" type="text"/>
 </div>
 <div class="space-y-1.5">
-<label class="font-label-md text-label-md text-slate-600 block">CORREO ELECTRÓNICO</label>
-<input class="w-full p-3 bg-slate-50 border border-slate-200 rounded text-sm focus:border-secondary focus:ring-0" placeholder="c.mendoza@empresa.com" type="email"/>
+<label class="font-label-md text-label-md text-slate-600 block" for="email-address">CORREO ELECTRÓNICO</label>
+<input class="w-full p-3 bg-slate-50 border border-slate-200 rounded text-sm focus:border-secondary focus:ring-0 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" id="email-address" placeholder="c.mendoza@empresa.com" type="email"/>
 </div>
 <div class="grid grid-cols-2 gap-4">
 <div class="space-y-1.5">
-<label class="font-label-md text-label-md text-slate-600 block">DEPARTAMENTO</label>
-<select class="w-full p-3 bg-slate-50 border border-slate-200 rounded text-sm focus:border-secondary focus:ring-0">
+<label class="font-label-md text-label-md text-slate-600 block" for="department-select">DEPARTAMENTO</label>
+<select class="w-full p-3 bg-slate-50 border border-slate-200 rounded text-sm focus:border-secondary focus:ring-0 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" id="department-select">
 <option>TI</option>
 <option>RRHH</option>
 <option>Finanzas</option>
@@ -222,8 +225,8 @@
 </select>
 </div>
 <div class="space-y-1.5">
-<label class="font-label-md text-label-md text-slate-600 block">ROL DE ACCESO</label>
-<select class="w-full p-3 bg-slate-50 border border-slate-200 rounded text-sm focus:border-secondary focus:ring-0">
+<label class="font-label-md text-label-md text-slate-600 block" for="role-select">ROL DE ACCESO</label>
+<select class="w-full p-3 bg-slate-50 border border-slate-200 rounded text-sm focus:border-secondary focus:ring-0 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" id="role-select">
 <option>Usuario</option>
 <option>Administrador</option>
 <option>RRHH</option>
@@ -231,10 +234,10 @@
 </div>
 </div>
 <div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
-<button class="w-full py-3 bg-secondary text-white font-bold text-sm rounded hover:bg-blue-700 transition-colors" type="submit">
+<button class="w-full py-3 bg-secondary text-white font-bold text-sm rounded hover:bg-blue-700 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" type="submit">
                                 Crear Usuario
                             </button>
-<button class="w-full py-3 bg-transparent text-secondary font-bold text-sm rounded hover:bg-slate-50 transition-colors" type="button">
+<button class="w-full py-3 bg-transparent text-secondary font-bold text-sm rounded hover:bg-slate-50 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" type="button">
                                 Limpiar Formulario
                             </button>
 </div>
@@ -287,8 +290,8 @@
 </td>
 <td class="p-table-cell-padding text-right">
 <div class="flex justify-end gap-2">
-<button class="p-1.5 text-slate-400 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
-<button class="p-1.5 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-lg">person_off</span></button>
+<button aria-label="Editar usuario" class="p-1.5 text-slate-400 hover:text-secondary transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" title="Editar usuario"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button aria-label="Desactivar usuario" class="p-1.5 text-slate-400 hover:text-error transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" title="Desactivar usuario"><span class="material-symbols-outlined text-lg">person_off</span></button>
 </div>
 </td>
 </tr>
@@ -316,8 +319,8 @@
 </td>
 <td class="p-table-cell-padding text-right">
 <div class="flex justify-end gap-2">
-<button class="p-1.5 text-slate-400 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
-<button class="p-1.5 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-lg">person_off</span></button>
+<button aria-label="Editar usuario" class="p-1.5 text-slate-400 hover:text-secondary transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" title="Editar usuario"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button aria-label="Desactivar usuario" class="p-1.5 text-slate-400 hover:text-error transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" title="Desactivar usuario"><span class="material-symbols-outlined text-lg">person_off</span></button>
 </div>
 </td>
 </tr>
@@ -345,8 +348,8 @@
 </td>
 <td class="p-table-cell-padding text-right">
 <div class="flex justify-end gap-2">
-<button class="p-1.5 text-slate-400 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
-<button class="p-1.5 text-secondary hover:text-secondary transition-colors"><span class="material-symbols-outlined text-lg">person_check</span></button>
+<button aria-label="Editar usuario" class="p-1.5 text-slate-400 hover:text-secondary transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" title="Editar usuario"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button aria-label="Activar usuario" class="p-1.5 text-secondary hover:text-secondary transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" title="Activar usuario"><span class="material-symbols-outlined text-lg">person_check</span></button>
 </div>
 </td>
 </tr>
@@ -374,8 +377,8 @@
 </td>
 <td class="p-table-cell-padding text-right">
 <div class="flex justify-end gap-2">
-<button class="p-1.5 text-slate-400 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
-<button class="p-1.5 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-lg">person_off</span></button>
+<button aria-label="Editar usuario" class="p-1.5 text-slate-400 hover:text-secondary transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" title="Editar usuario"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button aria-label="Desactivar usuario" class="p-1.5 text-slate-400 hover:text-error transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" title="Desactivar usuario"><span class="material-symbols-outlined text-lg">person_off</span></button>
 </div>
 </td>
 </tr>
@@ -385,11 +388,11 @@
 <div class="mt-6 flex items-center justify-between">
 <p class="text-xs text-slate-500">Mostrando 4 de 47 usuarios registrados</p>
 <div class="flex gap-1">
-<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-400 hover:bg-slate-50"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
-<button class="w-8 h-8 flex items-center justify-center bg-secondary text-white rounded text-xs font-bold">1</button>
-<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-600 hover:bg-slate-50 text-xs font-bold">2</button>
-<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-600 hover:bg-slate-50 text-xs font-bold">3</button>
-<button class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-400 hover:bg-slate-50"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+<button aria-label="Página anterior" class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-400 hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" title="Página anterior"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button aria-label="Página 1" class="w-8 h-8 flex items-center justify-center bg-secondary text-white rounded text-xs font-bold focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none">1</button>
+<button aria-label="Página 2" class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-600 hover:bg-slate-50 text-xs font-bold focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none">2</button>
+<button aria-label="Página 3" class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-600 hover:bg-slate-50 text-xs font-bold focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none">3</button>
+<button aria-label="Página siguiente" class="w-8 h-8 flex items-center justify-center border border-slate-200 rounded text-slate-400 hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" title="Página siguiente"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
 </div>
 </div>
 </div>
