@@ -104,6 +104,7 @@
     </style>
 </head>
 <body class="bg-slate-50 text-on-surface">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:ring-2 focus:ring-secondary focus:ring-offset-2">Saltar al contenido principal</a>
 <!-- SideNavBar Shell -->
 <aside class="fixed left-0 top-0 h-screen w-[280px] border-r bg-slate-50 border-slate-200 flex flex-col py-6">
 <div class="px-6 mb-8 flex items-center gap-3">
@@ -150,20 +151,20 @@
 </div>
 </aside>
 <!-- Main Canvas -->
-<main class="ml-[280px] min-h-screen">
+<main id="main-content" tabindex="-1" class="ml-[280px] min-h-screen outline-none">
 <!-- TopNavBar Shell -->
 <header class="fixed top-0 right-0 left-[280px] h-16 border-b bg-white border-slate-200 z-40 flex items-center justify-between px-8">
 <div class="flex items-center gap-4 flex-1">
 <h2 class="font-headline-sm text-slate-900 mr-8">Gestión de Inventario</h2>
 <div class="relative w-full max-w-md group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600" data-icon="search">search</span>
-<input class="w-full bg-slate-50 border border-slate-200 rounded py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" placeholder="Buscar por ID, dispositivo o usuario..." type="text"/>
+<input class="w-full bg-slate-50 border border-slate-200 rounded py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" placeholder="Buscar por ID, dispositivo o usuario..." type="text" aria-label="Buscar activos, usuarios o tickets"/>
 </div>
 </div>
 <div class="flex items-center gap-6">
 <div class="flex items-center gap-4 text-slate-500">
-<button class="hover:text-blue-600 transition-colors"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
-<button class="hover:text-blue-600 transition-colors"><span class="material-symbols-outlined" data-icon="history">history</span></button>
+<button class="hover:text-blue-600 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" aria-label="Notificaciones" title="Notificaciones"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="hover:text-blue-600 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" aria-label="Historial de actividad" title="Historial de actividad"><span class="material-symbols-outlined" data-icon="history">history</span></button>
 </div>
 <div class="h-8 w-[1px] bg-slate-200"></div>
 <div class="flex items-center gap-3">
@@ -248,7 +249,7 @@
 </td>
 <td class="px-6 py-4 text-slate-600">12 Ene 2023</td>
 <td class="px-6 py-4 text-right">
-<button class="text-slate-400 hover:text-blue-600"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+<button class="text-slate-400 hover:text-blue-600 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" aria-label="Más acciones" title="Más acciones"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
 </td>
 </tr>
 <!-- Row 2 -->
@@ -295,7 +296,7 @@
 </td>
 <td class="px-6 py-4 text-slate-600">18 Abr 2023</td>
 <td class="px-6 py-4 text-right">
-<button class="text-slate-400 hover:text-blue-600"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+<button class="text-slate-400 hover:text-blue-600 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" aria-label="Más acciones" title="Más acciones"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
 </td>
 </tr>
 <!-- Row 4 -->
@@ -342,7 +343,7 @@
 </td>
 <td class="px-6 py-4 text-slate-600">10 Ago 2023</td>
 <td class="px-6 py-4 text-right">
-<button class="text-slate-400 hover:text-blue-600"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+<button class="text-slate-400 hover:text-blue-600 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" aria-label="Más acciones" title="Más acciones"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
 </td>
 </tr>
 </tbody>
