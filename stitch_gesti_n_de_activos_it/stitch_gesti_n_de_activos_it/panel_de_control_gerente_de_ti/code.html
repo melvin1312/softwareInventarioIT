@@ -105,6 +105,9 @@
     </style>
 </head>
 <body class="font-body-md text-body-md">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:ring-2 focus:ring-secondary focus:ring-offset-2">
+    Saltar al contenido principal
+</a>
 <!-- SideNavBar (Authority Source: JSON) -->
 <aside class="fixed left-0 top-0 h-screen w-[280px] border-r bg-slate-50 border-slate-200 flex flex-col py-6 z-50">
 <div class="px-6 mb-8 flex items-center gap-3">
@@ -154,16 +157,16 @@
 <div class="flex items-center flex-1 max-w-xl">
 <div class="relative w-full">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
-<input class="w-full bg-slate-50 border border-slate-200 rounded-lg py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all" placeholder="Buscar activos, usuarios o tickets..." type="text"/>
+<input aria-label="Buscar activos, usuarios o tickets" class="w-full bg-slate-50 border border-slate-200 rounded-lg py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all" placeholder="Buscar activos, usuarios o tickets..." type="text"/>
 </div>
 </div>
 <div class="flex items-center gap-6">
 <div class="flex items-center gap-4 text-slate-500">
-<button class="hover:text-blue-600 transition-colors relative">
+<button aria-label="Notificaciones" title="Notificaciones" class="hover:text-blue-600 transition-colors relative focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded">
 <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
 <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
 </button>
-<button class="hover:text-blue-600 transition-colors">
+<button aria-label="Historial de actividad" title="Historial de actividad" class="hover:text-blue-600 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded">
 <span class="material-symbols-outlined" data-icon="history">history</span>
 </button>
 </div>
@@ -180,7 +183,7 @@
 </div>
 </header>
 <!-- Main Content Canvas -->
-<main class="ml-[280px] pt-16 p-8 min-h-screen">
+<main id="main-content" tabindex="-1" class="ml-[280px] pt-16 p-8 min-h-screen outline-none">
 <!-- Header Section -->
 <header class="mb-8 flex items-end justify-between">
 <div>
@@ -382,7 +385,7 @@
 <span class="bg-emerald-100 text-emerald-700 px-2.5 py-0.5 rounded-full text-[11px] font-bold">En Uso</span>
 </td>
 <td class="p-table-cell-padding text-right">
-<button class="text-slate-400 hover:text-blue-600 transition-colors">
+<button aria-label="Más acciones" title="Más acciones" class="text-slate-400 hover:text-blue-600 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded">
 <span class="material-symbols-outlined">more_vert</span>
 </button>
 </td>
@@ -404,7 +407,7 @@
 <span class="bg-blue-100 text-blue-700 px-2.5 py-0.5 rounded-full text-[11px] font-bold">Disponible</span>
 </td>
 <td class="p-table-cell-padding text-right">
-<button class="text-slate-400 hover:text-blue-600 transition-colors">
+<button aria-label="Más acciones" title="Más acciones" class="text-slate-400 hover:text-blue-600 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded">
 <span class="material-symbols-outlined">more_vert</span>
 </button>
 </td>
@@ -426,7 +429,7 @@
 <span class="bg-red-100 text-red-700 px-2.5 py-0.5 rounded-full text-[11px] font-bold">Error S.M.A.R.T</span>
 </td>
 <td class="p-table-cell-padding text-right">
-<button class="text-slate-400 hover:text-blue-600 transition-colors">
+<button aria-label="Más acciones" title="Más acciones" class="text-slate-400 hover:text-blue-600 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded">
 <span class="material-symbols-outlined">more_vert</span>
 </button>
 </td>
