@@ -107,6 +107,7 @@
     </style>
 </head>
 <body class="text-on-surface">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:ring-2 focus:ring-secondary focus:ring-offset-2">Saltar al contenido principal</a>
 <!-- SideNavBar Shell -->
 <aside class="fixed left-0 top-0 h-screen w-[280px] border-r border-slate-200 bg-slate-50 dark:bg-slate-950 flex flex-col py-6 z-50">
 <div class="px-6 mb-8 flex items-center gap-3">
@@ -119,30 +120,30 @@
 </div>
 </div>
 <nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" href="#">
 <span class="material-symbols-outlined">dashboard</span>
 <span class="font-inter text-sm font-medium tracking-tight">Dashboard</span>
 </a>
 <!-- Active State: Inventory (Where Asset Registration logically lives) -->
-<a class="flex items-center gap-3 px-4 py-3 text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20 border-r-2 border-blue-600 transition-colors duration-150 active:scale-[0.98]" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20 border-r-2 border-blue-600 transition-colors duration-150 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" href="#">
 <span class="material-symbols-outlined">inventory_2</span>
 <span class="font-inter text-sm font-medium tracking-tight">Inventory</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" href="#">
 <span class="material-symbols-outlined">swap_horiz</span>
 <span class="font-inter text-sm font-medium tracking-tight">Assignments</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" href="#">
 <span class="material-symbols-outlined">person_off</span>
 <span class="font-inter text-sm font-medium tracking-tight">Offboarding</span>
 </a>
 </nav>
 <div class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-6">
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" href="#">
 <span class="material-symbols-outlined">settings</span>
 <span class="font-inter text-sm font-medium tracking-tight">Settings</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" href="#">
 <span class="material-symbols-outlined">help</span>
 <span class="font-inter text-sm font-medium tracking-tight">Support</span>
 </a>
@@ -151,16 +152,16 @@
 <!-- TopNavBar Shell -->
 <header class="fixed top-0 right-0 left-[280px] h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 z-40 flex items-center justify-between px-8 w-full">
 <div class="flex items-center gap-4 flex-1">
-<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-blue-500/20">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-secondary/20">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
-<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-0" placeholder="Inventory Management" type="text"/>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2" aria-label="Buscar en inventario" placeholder="Inventory Management" type="text"/>
 </div>
 </div>
 <div class="flex items-center gap-4">
-<button class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+<button aria-label="Notificaciones" title="Notificaciones" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded p-1 flex items-center justify-center">
 <span class="material-symbols-outlined">notifications</span>
 </button>
-<button class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+<button aria-label="Historial de actividad" title="Historial de actividad" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded p-1 flex items-center justify-center">
 <span class="material-symbols-outlined">history</span>
 </button>
 <div class="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
@@ -171,7 +172,7 @@
 </div>
 </header>
 <!-- Main Content Area -->
-<main class="ml-[280px] pt-16 min-h-screen">
+<main id="main-content" tabindex="-1" class="ml-[280px] pt-16 min-h-screen outline-none">
 <div class="p-8 max-w-4xl mx-auto">
 <!-- Header Section -->
 <div class="mb-10 text-center">
@@ -183,59 +184,63 @@
 </div>
 <!-- Form Card -->
 <div class="bg-white border border-slate-200 rounded-lg p-10">
-<form class="space-y-8">
+<form class="space-y-8" id="new-asset-form" novalidate>
 <!-- Section: General Details -->
 <div class="grid grid-cols-2 gap-x-8 gap-y-6">
 <div class="col-span-2 sm:col-span-1 flex flex-col gap-2">
-<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="asset_name">Nombre del Activo</label>
-<input class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all placeholder:text-slate-400" id="asset_name" placeholder="Ej: MacBook Pro 16" type="text"/>
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="asset_name">Nombre del Activo <span class="text-error" aria-hidden="true">*</span></label>
+<input class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2" id="asset_name" placeholder="Ej: MacBook Pro 16" type="text" required aria-required="true"/>
+<p class="text-xs text-error hidden" id="error-asset_name">El nombre del activo es requerido.</p>
 </div>
 <div class="col-span-2 sm:col-span-1 flex flex-col gap-2">
-<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="type">Tipo de Activo</label>
-<select class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all" id="type">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="type">Tipo de Activo <span class="text-error" aria-hidden="true">*</span></label>
+<select class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2" id="type" required aria-required="true">
 <option disabled="" selected="" value="">Seleccione una categoría</option>
 <option value="laptop">Laptop</option>
 <option value="monitor">Monitor</option>
 <option value="mobile">Mobile</option>
 <option value="peripherals">Peripherals</option>
 </select>
+<p class="text-xs text-error hidden" id="error-type">Debe seleccionar una categoría.</p>
 </div>
 <div class="col-span-2 sm:col-span-1 flex flex-col gap-2">
-<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="serial_number">Número de Serie</label>
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="serial_number">Número de Serie <span class="text-error" aria-hidden="true">*</span></label>
 <div class="relative">
-<input class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all placeholder:text-slate-400" id="serial_number" placeholder="SN-00000000" type="text"/>
-<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-base">qr_code_scanner</span>
+<input class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 pr-12" id="serial_number" placeholder="SN-00000000" type="text" required aria-required="true"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-base" aria-hidden="true">qr_code_scanner</span>
 </div>
+<p class="text-xs text-error hidden" id="error-serial_number">El número de serie es requerido.</p>
 </div>
 <div class="col-span-2 sm:col-span-1 flex flex-col gap-2">
 <label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="purchase_date">Fecha de Compra</label>
-<input class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all" id="purchase_date" type="date"/>
+<input class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2" id="purchase_date" type="date"/>
 </div>
 <div class="col-span-2 sm:col-span-1 flex flex-col gap-2">
 <label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="assigned_user">Usuario Asignado</label>
 <div class="relative">
-<input class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all placeholder:text-slate-400" id="assigned_user" placeholder="Buscar empleado..." type="text"/>
-<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">person_search</span>
+<input class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 pr-12" id="assigned_user" placeholder="Buscar empleado..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg" aria-hidden="true">person_search</span>
 </div>
 </div>
 <div class="col-span-2 sm:col-span-1 flex flex-col gap-2">
-<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="location">Ubicación</label>
-<select class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all" id="location">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="location">Ubicación <span class="text-error" aria-hidden="true">*</span></label>
+<select class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2" id="location" required aria-required="true">
 <option disabled="" selected="" value="">Seleccione sede/oficina</option>
 <option value="sede_central">Sede Central - Madrid</option>
 <option value="sede_norte">Sede Norte - Bilbao</option>
 <option value="remoto">Remoto / Home Office</option>
 </select>
+<p class="text-xs text-error hidden" id="error-location">La ubicación es requerida.</p>
 </div>
 </div>
 <!-- Divider -->
 <div class="border-t border-slate-100 pt-8"></div>
 <!-- Actions -->
 <div class="flex items-center justify-between">
-<button class="px-6 py-2.5 text-blue-600 font-inter text-sm font-semibold hover:bg-blue-50 rounded-lg transition-colors" type="button">
+<button class="px-6 py-2.5 text-blue-600 font-inter text-sm font-semibold hover:bg-blue-50 rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none" type="button" id="cancel-btn">
                             Cancelar
                         </button>
-<button class="bg-blue-600 text-white px-10 py-3 rounded-lg font-inter text-sm font-bold shadow-sm active:scale-[0.98] transition-transform border-b border-blue-800/20" type="submit">
+<button class="bg-blue-600 text-white px-10 py-3 rounded-lg font-inter text-sm font-bold shadow-sm active:scale-[0.98] transition-all border-b border-blue-800/20 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none flex items-center justify-center gap-2" type="submit" id="submit-btn">
                             Guardar Activo
                         </button>
 </div>
@@ -269,4 +274,87 @@
 </main>
 <!-- Contextual FAB (Hidden as per requirement for Details/Form screens) -->
 <!-- Suppressed: Relevance Check - Navigation hidden or focused task priority -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('new-asset-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const fields = ['asset_name', 'type', 'serial_number', 'location'];
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
+        let firstInvalidField = null;
+
+        fields.forEach(fieldId => {
+            const field = document.getElementById(fieldId);
+            const errorMsg = document.getElementById(`error-${fieldId}`);
+            if (!field.value || field.value.trim() === '') {
+                isValid = false;
+                errorMsg.classList.remove('hidden');
+                field.classList.add('border-error', 'ring-2', 'ring-error/20');
+                if (!firstInvalidField) firstInvalidField = field;
+            } else {
+                errorMsg.classList.add('hidden');
+                field.classList.remove('border-error', 'ring-2', 'ring-error/20');
+            }
+        });
+
+        if (!isValid) {
+            if (firstInvalidField) firstInvalidField.focus();
+            return;
+        }
+
+        const originalContent = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+            <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>Registrando...</span>
+        `;
+
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalContent;
+            form.reset();
+            fields.forEach(fieldId => {
+                document.getElementById(fieldId).classList.remove('border-error', 'ring-2', 'ring-error/20');
+                document.getElementById(`error-${fieldId}`).classList.add('hidden');
+            });
+            showToast('¡Activo registrado con éxito!');
+        }, 1200);
+    });
+
+    cancelBtn.addEventListener('click', () => {
+        form.reset();
+        fields.forEach(fieldId => {
+            document.getElementById(fieldId).classList.remove('border-error', 'ring-2', 'ring-error/20');
+            document.getElementById(`error-${fieldId}`).classList.add('hidden');
+        });
+    });
+
+    function showToast(message) {
+        const toast = document.createElement('div');
+        toast.setAttribute('role', 'alert');
+        toast.className = 'fixed bottom-6 right-6 z-[150] flex items-center gap-3 bg-slate-900 text-white px-5 py-4 rounded-lg shadow-2xl transition-all duration-300 transform translate-y-12 opacity-0';
+        toast.innerHTML = `
+            <span class="material-symbols-outlined text-emerald-400">check_circle</span>
+            <div class="flex-1 text-sm font-medium pr-2">${message}</div>
+            <button aria-label="Cerrar notificación" class="text-slate-400 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded">
+                <span class="material-symbols-outlined text-lg">close</span>
+            </button>
+        `;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.classList.remove('translate-y-12', 'opacity-0'), 50);
+        const dismiss = () => {
+            toast.classList.add('translate-y-12', 'opacity-0');
+            setTimeout(() => toast.remove(), 300);
+        };
+        toast.querySelector('button').addEventListener('click', dismiss);
+        setTimeout(dismiss, 4000);
+    }
+});
+</script>
 </body></html>
