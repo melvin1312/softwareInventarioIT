@@ -1,0 +1,5 @@
+# Palette's Journal - Critical UX/A11y Learnings
+
+## 2026-04-21 - [A11y & Interactive Integrity on Password Fields]
+**Learning:** Static design prototypes often represent interactive UX patterns (e.g., password visibility eye icons) visually without underlying JavaScript logic or keyboard/screen reader consideration. This results in broken/non-functional controls for interactive users, and missing labels or focus states for assistive technologies. In addition, insufficient input padding (like `pr-3`) on fields with trailing controls can cause text overflow and overlap with the control itself.
+**Action:** When working on input controls with trailing triggers, always pair the visual states with functional vanilla JavaScript toggles. Standardize trailing padding to at least `pr-12`, assign explicit localized ARIA labels/titles (e.g., "Mostrar/Ocultar contraseña"), apply standard `focus-visible:ring-2` focus outlines, and dynamically update both the ligature text and standard icons' `data-icon` attributes on click.
