@@ -104,8 +104,9 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface min-h-screen flex items-center justify-center p-6">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:ring-2 focus:ring-secondary focus:ring-offset-2">Saltar al contenido principal</a>
 <!-- Login Container -->
-<main class="grid lg:grid-cols-2 max-w-5xl w-full bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm min-h-[640px]">
+<main id="main-content" tabindex="-1" class="outline-none grid lg:grid-cols-2 max-w-5xl w-full bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm min-h-[640px]">
 <!-- Left Column: Visual/Security Messaging -->
 <section class="hidden lg:flex flex-col justify-between p-12 bg-primary-container text-white relative overflow-hidden">
 <div class="relative z-10">
@@ -155,32 +156,32 @@
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
 <span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="email" name="email" placeholder="ejemplo@empresa.com" required="" type="email"/>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none transition-all" id="email" name="email" placeholder="ejemplo@empresa.com" required="" type="email"/>
 </div>
 </div>
 <!-- Password Field -->
 <div class="space-y-2">
 <div class="flex justify-between items-center">
 <label class="font-label-md text-label-md text-on-surface-variant uppercase" for="password">Contraseña</label>
-<a class="text-label-md text-secondary hover:underline font-bold transition-colors" href="#">¿Olvidó su contraseña?</a>
+<a class="text-label-md text-secondary hover:underline font-bold focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded transition-colors" href="#">¿Olvidó su contraseña?</a>
 </div>
 <div class="relative group">
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
 <span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
-<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button">
+<input class="block w-full pl-10 pr-12 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none transition-all" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button id="toggle-password-visibility" aria-label="Mostrar contraseña" title="Mostrar contraseña" class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded transition-colors" type="button">
 <span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
 </button>
 </div>
 </div>
 <!-- Remember Me -->
 <div class="flex items-center">
-<input class="h-4 w-4 text-secondary focus:ring-secondary border-outline-variant rounded transition-all" id="remember" name="remember" type="checkbox"/>
+<input class="h-4 w-4 text-secondary focus:ring-secondary focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none border-outline-variant rounded transition-all" id="remember" name="remember" type="checkbox"/>
 <label class="ml-2 block text-body-md text-on-surface-variant" for="remember">Recordarme en este dispositivo</label>
 </div>
 <!-- Submit Button -->
-<button class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white font-label-md rounded-lg shadow-sm active:scale-[0.98] transition-all duration-150" type="submit">
+<button class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white font-label-md rounded-lg shadow-sm active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none transition-all duration-150" type="submit">
 <span>Iniciar Sesión</span>
 <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
 </button>
@@ -189,7 +190,7 @@
 <div class="mt-12 pt-8 border-t border-outline-variant text-center">
 <p class="text-body-md text-on-surface-variant">
                         ¿Problemas para acceder? 
-                        <a class="text-secondary font-bold hover:underline" href="#">Contactar a soporte IT</a>
+                        <a class="text-secondary font-bold hover:underline focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:outline-none rounded" href="#">Contactar a soporte IT</a>
 </p>
 </div>
 </div>
@@ -202,4 +203,32 @@
 <span class="font-mono-md text-mono-md text-on-surface-variant">Ver. 4.2.0-Production</span>
 </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.getElementById("toggle-password-visibility");
+        const passwordInput = document.getElementById("password");
+
+        if (toggleButton && passwordInput) {
+            toggleButton.addEventListener("click", () => {
+                const isPassword = passwordInput.getAttribute("type") === "password";
+
+                // Toggle input type
+                passwordInput.setAttribute("type", isPassword ? "text" : "password");
+
+                // Toggle icon and attributes
+                const iconSpan = toggleButton.querySelector(".material-symbols-outlined");
+                if (iconSpan) {
+                    const iconName = isPassword ? "visibility_off" : "visibility";
+                    iconSpan.textContent = iconName;
+                    iconSpan.setAttribute("data-icon", iconName);
+                }
+
+                // Update accessibility labels
+                const labelText = isPassword ? "Ocultar contraseña" : "Mostrar contraseña";
+                toggleButton.setAttribute("aria-label", labelText);
+                toggleButton.setAttribute("title", labelText);
+            });
+        }
+    });
+</script>
 </body></html>
