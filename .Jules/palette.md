@@ -1,0 +1,3 @@
+## 2025-07-29 - Input Overlaps and TabIndex Focus Redirection
+**Learning:** Interactive trailing elements in input fields (such as a password visibility toggle) require sufficient horizontal padding on the input itself (e.g., `pr-12`) to prevent user text from overlapping with the absolutely positioned icon. Additionally, managing skip-link focus redirection to container elements like `<main>` is optimized by utilizing `tabindex="-1"` and the `outline-none` class, which prevents unwanted visual browser outlines while allowing keyboard focus.
+**Action:** Always verify right-hand trailing element padding on text/password inputs and style container-level skip targets with `tabindex="-1"` and `outline-none`.
