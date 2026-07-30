@@ -169,7 +169,7 @@
 <span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
 </div>
 <input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
-<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button">
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 rounded" type="button" id="toggle-password-visibility" aria-label="Mostrar contraseña" title="Mostrar contraseña" aria-pressed="false">
 <span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
 </button>
 </div>
@@ -202,4 +202,25 @@
 <span class="font-mono-md text-mono-md text-on-surface-variant">Ver. 4.2.0-Production</span>
 </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const passwordInput = document.getElementById('password');
+    const toggleBtn = document.getElementById('toggle-password-visibility');
+    if (passwordInput && toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            const icon = toggleBtn.querySelector('span');
+            if (icon) {
+                icon.textContent = isPassword ? 'visibility_off' : 'visibility';
+                icon.setAttribute('data-icon', isPassword ? 'visibility_off' : 'visibility');
+            }
+            toggleBtn.setAttribute('aria-pressed', isPassword ? 'true' : 'false');
+            const label = isPassword ? 'Ocultar contraseña' : 'Mostrar contraseña';
+            toggleBtn.setAttribute('aria-label', label);
+            toggleBtn.setAttribute('title', label);
+        });
+    }
+});
+</script>
 </body></html>
