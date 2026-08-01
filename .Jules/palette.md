@@ -1,0 +1,5 @@
+# Palette's Journal - Critical UX/A11y Learnings
+
+## 2025-08-01 - Interactive Form State and Feedback in Static Prototypes
+**Learning:** In static HTML prototypes, forms are often completely non-functional or lack proper keyboard accessibility and interactive response states. Adding a skip-to-content link ("Saltar al contenido principal") and keyboard focus states ("focus-visible:ring-2") is a vital foundation. Furthermore, providing immediate button states (transitioning text to "Verificando..." and rendering a loading spinner) combined with sliding, dismissible feedback toasts dramatically elevates perceived performance and screen-reader context.
+**Action:** When implementing password toggles, always update both the visual elements (textContent for ligatures and data-icon attributes) and the assistive technology hooks (aria-pressed, dynamic aria-label, and title properties). Ensure trailing absolute buttons (like password toggles) have sufficient padding on the parent input (pr-12) to prevent overlapping characters.
