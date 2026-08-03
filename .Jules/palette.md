@@ -1,0 +1,5 @@
+# Palette's Journal - Critical Learnings Only
+
+## 2025-08-03 - Interactive Field Overlay Text Overlap & Unmasking ARIA Pattern
+**Learning:** When adding inline trailing absolute-positioned elements (such as password unmasking/toggle eyes, clear buttons, or search badges) inside input wrappers, standard Tailwind inputs (`pr-3` or `pr-4`) risk letting long user input text visually slide under the overlay icon, causing a cluttered/unreadable overlap. To avoid this, inputs with trailing interactive overlay elements require `pr-12` padding. Additionally, localized (Spanish) password unmasking should seamlessly manage screen reader states by synchronously toggling `aria-pressed` alongside dynamic, descriptive `aria-label` and `title` switches ('Mostrar contraseña' vs. 'Ocultar contraseña') and iconography attributes (both dynamic `textContent` and `data-icon` attribute values).
+**Action:** Always set the input's right padding to at least `pr-12` when trailing absolute overlays are present. Ensure custom toggle buttons are fully key-navigable and programmatically keep `aria-pressed`, `aria-label`, `title`, and inner text content synchronized with state.
