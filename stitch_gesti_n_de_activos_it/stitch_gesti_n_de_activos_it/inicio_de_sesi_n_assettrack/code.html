@@ -104,8 +104,11 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface min-h-screen flex items-center justify-center p-6">
+<!-- Saltar al contenido principal -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:ring-2 focus:ring-secondary focus:ring-offset-2">Saltar al contenido principal</a>
+
 <!-- Login Container -->
-<main class="grid lg:grid-cols-2 max-w-5xl w-full bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm min-h-[640px]">
+<main id="main-content" tabindex="-1" class="outline-none grid lg:grid-cols-2 max-w-5xl w-full bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm min-h-[640px]">
 <!-- Left Column: Visual/Security Messaging -->
 <section class="hidden lg:flex flex-col justify-between p-12 bg-primary-container text-white relative overflow-hidden">
 <div class="relative z-10">
@@ -168,8 +171,8 @@
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
 <span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
-<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button">
+<input class="block w-full pl-10 pr-12 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button id="toggle-password" class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface focus-visible:ring-2 focus-visible:ring-secondary focus-visible:rounded transition-colors" type="button" aria-label="Mostrar contraseña" aria-pressed="false" title="Mostrar contraseña">
 <span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
 </button>
 </div>
@@ -180,9 +183,9 @@
 <label class="ml-2 block text-body-md text-on-surface-variant" for="remember">Recordarme en este dispositivo</label>
 </div>
 <!-- Submit Button -->
-<button class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white font-label-md rounded-lg shadow-sm active:scale-[0.98] transition-all duration-150" type="submit">
-<span>Iniciar Sesión</span>
-<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+<button id="login-submit" class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white font-label-md rounded-lg shadow-sm active:scale-[0.98] transition-all duration-150 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 outline-none" type="submit">
+<span id="submit-text">Iniciar Sesión</span>
+<span id="submit-icon" class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
 </button>
 </form>
 <!-- Help Link -->
@@ -202,4 +205,93 @@
 <span class="font-mono-md text-mono-md text-on-surface-variant">Ver. 4.2.0-Production</span>
 </div>
 </div>
+
+<!-- Sliding Success Toast Notification -->
+<div id="success-toast" class="fixed top-4 right-4 transform translate-x-[120%] transition-transform duration-300 ease-out bg-white border border-emerald-200 shadow-xl rounded-xl p-4 flex items-start gap-3 max-w-md z-50 pointer-events-none" role="status" aria-live="polite">
+<div class="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 flex-shrink-0">
+<span class="material-symbols-outlined text-xl" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<p class="font-inter text-sm font-bold text-slate-900">¡Inicio de sesión exitoso!</p>
+<p class="text-xs text-slate-500 mt-1">Redirigiendo al panel de control corporativo...</p>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Password visibility toggle
+    const passwordInput = document.getElementById('password');
+    const toggleBtn = document.getElementById('toggle-password');
+    if (toggleBtn && passwordInput) {
+        toggleBtn.addEventListener('click', () => {
+            const isPressed = toggleBtn.getAttribute('aria-pressed') === 'true';
+            toggleBtn.setAttribute('aria-pressed', !isPressed);
+            const newType = isPressed ? 'password' : 'text';
+            passwordInput.setAttribute('type', newType);
+
+            const icon = toggleBtn.querySelector('.material-symbols-outlined');
+            if (icon) {
+                icon.textContent = isPressed ? 'visibility' : 'visibility_off';
+                icon.setAttribute('data-icon', isPressed ? 'visibility' : 'visibility_off');
+            }
+
+            const newLabel = isPressed ? 'Mostrar contraseña' : 'Ocultar contraseña';
+            toggleBtn.setAttribute('aria-label', newLabel);
+            toggleBtn.setAttribute('title', newLabel);
+        });
+    }
+
+    // Form submission simulation
+    const form = document.querySelector('form');
+    const submitBtn = document.getElementById('login-submit');
+    const submitText = document.getElementById('submit-text');
+    const submitIcon = document.getElementById('submit-icon');
+    const toast = document.getElementById('success-toast');
+
+    if (form && submitBtn) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+            if (submitText) submitText.textContent = 'Iniciando sesión...';
+            if (submitIcon) {
+                submitIcon.outerHTML = `
+                    <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="submit-icon">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                `;
+            }
+
+            // Simulate API request and show success toast
+            setTimeout(() => {
+                if (toast) {
+                    toast.classList.remove('translate-x-[120%]');
+                    toast.classList.add('translate-x-0');
+
+                    // Hide toast after 3.5 seconds and reset form
+                    setTimeout(() => {
+                        toast.classList.remove('translate-x-0');
+                        toast.classList.add('translate-x-[120%]');
+
+                        // Reset button
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+                        const newSubmitIcon = document.getElementById('submit-icon');
+                        if (submitText) submitText.textContent = 'Iniciar Sesión';
+                        if (newSubmitIcon) {
+                            newSubmitIcon.outerHTML = `
+                                <span id="submit-icon" class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+                            `;
+                        }
+                        form.reset();
+                    }, 3500);
+                }
+            }, 1000);
+        });
+    }
+});
+</script>
 </body></html>
