@@ -1,0 +1,5 @@
+# Palette's Journal - Critical UX/A11y Learnings
+
+## 2026-04-21 - Accessible Navigation and Dynamic Toggles
+**Learning:** For static HTML prototypes in a Corporate Modernist design system, accessibility is often a missing baseline. Specifically, "Skip to content" links must target a `<main>` container with `tabindex="-1"` and `outline-none` so keyboard focus is correctly and quietly managed without unwanted browser focus outlines. Furthermore, input fields containing trailing absolute-positioned overlay actions (like password eye toggles) must employ at least `pr-12` right padding to prevent long user inputs from visually overlapping the button. Finally, dynamic custom controls like password unmasking should seamlessly update screen reader descriptions (`aria-pressed`, `aria-label`, and `title`) and maintain data icon state consistency.
+**Action:** Always verify overlay buttons have adequate container padding, configure skip-links with standardized Tailwind styles, and use synchronized vanilla JavaScript toggles that maintain screen reader parity.
