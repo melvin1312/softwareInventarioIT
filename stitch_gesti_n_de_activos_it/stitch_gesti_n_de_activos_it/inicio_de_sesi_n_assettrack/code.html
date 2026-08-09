@@ -168,8 +168,8 @@
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
 <span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
-<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button">
+<input class="block w-full pl-10 pr-12 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button id="toggle-password" aria-label="Mostrar contraseña" aria-pressed="false" title="Mostrar contraseña" class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 rounded transition-all outline-none" type="button">
 <span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
 </button>
 </div>
@@ -202,4 +202,18 @@
 <span class="font-mono-md text-mono-md text-on-surface-variant">Ver. 4.2.0-Production</span>
 </div>
 </div>
+<script>
+  document.getElementById('toggle-password').addEventListener('click', function() {
+    const pwdInput = document.getElementById('password');
+    const icon = this.querySelector('.material-symbols-outlined');
+    const isVisible = pwdInput.type === 'text';
+    pwdInput.type = isVisible ? 'password' : 'text';
+    this.setAttribute('aria-pressed', !isVisible);
+    const label = isVisible ? 'Mostrar contraseña' : 'Ocultar contraseña';
+    this.setAttribute('aria-label', label);
+    this.title = label;
+    icon.textContent = isVisible ? 'visibility' : 'visibility_off';
+    icon.setAttribute('data-icon', isVisible ? 'visibility' : 'visibility_off');
+  });
+</script>
 </body></html>
