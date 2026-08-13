@@ -1,0 +1,5 @@
+# Palette UX Journal
+
+## 2026-08-13 - Accessible Interactive Password Toggles and Keyboard Navigation Skip Links
+**Learning:** For enterprise-grade web applications with static prototypes, key accessibility features are often completely omitted in the initial design blocks. Standardizing interactive inputs like password visibility toggles requires not just changing the input types but dynamically synchronizing the `aria-pressed`, `aria-label`, and `title` attributes (using Spanish equivalents like 'Mostrar contraseña' and 'Ocultar contraseña' for correct localization), alongside visual indicators such as the focus-ring. Additionally, setting custom focus targets (e.g. `tabindex="-1"` and `outline-none` on `<main>`) allows skip-to-content links ('Saltar al contenido principal') to direct keyboard and screen reader focus accurately.
+**Action:** Always verify overlay inputs have right padding of at least `pr-12` to prevent overlapping user-entered text, and dynamically mirror all state changes to the dynamic attributes (`data-icon`, textContent, ARIA elements).
