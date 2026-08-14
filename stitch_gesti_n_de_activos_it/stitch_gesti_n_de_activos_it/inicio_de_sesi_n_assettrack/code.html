@@ -168,8 +168,8 @@
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
 <span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
-<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button">
+<input class="block w-full pl-10 pr-12 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button id="toggle-password" class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded transition-colors" type="button" aria-label="Mostrar contraseña" title="Mostrar contraseña" aria-pressed="false">
 <span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
 </button>
 </div>
@@ -202,4 +202,31 @@
 <span class="font-mono-md text-mono-md text-on-surface-variant">Ver. 4.2.0-Production</span>
 </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const passwordInput = document.getElementById('password');
+    const toggleButton = document.getElementById('toggle-password');
+    if (passwordInput && toggleButton) {
+        const toggleIcon = toggleButton.querySelector('.material-symbols-outlined');
+        toggleButton.addEventListener('click', () => {
+            const isPressed = toggleButton.getAttribute('aria-pressed') === 'true';
+            const newType = isPressed ? 'password' : 'text';
+            passwordInput.setAttribute('type', newType);
+            toggleButton.setAttribute('aria-pressed', !isPressed ? 'true' : 'false');
+
+            if (isPressed) {
+                toggleButton.setAttribute('aria-label', 'Mostrar contraseña');
+                toggleButton.setAttribute('title', 'Mostrar contraseña');
+                toggleIcon.textContent = 'visibility';
+                toggleIcon.setAttribute('data-icon', 'visibility');
+            } else {
+                toggleButton.setAttribute('aria-label', 'Ocultar contraseña');
+                toggleButton.setAttribute('title', 'Ocultar contraseña');
+                toggleIcon.textContent = 'visibility_off';
+                toggleIcon.setAttribute('data-icon', 'visibility_off');
+            }
+        });
+    }
+});
+</script>
 </body></html>
