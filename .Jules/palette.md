@@ -1,0 +1,3 @@
+## 2025-05-18 - Accessibility Skip Links and Password Toggles in Static Prototypes
+**Learning:** Static HTML prototypes in this repository often lack accessible skip-to-content links and keyboard-accessible password toggles. Adding `aria-pressed`, `aria-label`, `pr-10` padding on password inputs, and focus-visible indicators provides immediate accessibility improvements without requiring full framework dependencies.
+**Action:** When working on login forms, ensure input right padding accommodates action overlays, add a skip link target on `<main>`, and toggle both textContent and `data-icon` attributes for Material Symbols.
