@@ -1,0 +1,3 @@
+## 2025-05-18 - Password Toggle Padding and Dynamic ARIA States
+**Learning:** Adding trailing overlay buttons (like password visibility toggles) inside relative input containers without proper right-padding causes text collision. Input fields require at least `pr-12` padding when paired with right-aligned toggle buttons. Additionally, toggle buttons must maintain synced `aria-pressed`, `aria-label`, and `title` attributes alongside `textContent` and `data-icon` attributes to ensure complete screen reader accessibility.
+**Action:** Always apply `pr-12` to inputs with right overlay buttons and synchronize both visual icons and accessible text/pressed attributes in toggle scripts.
