@@ -1,0 +1,3 @@
+## 2025-08-25 - Interactive Password Visibility Toggle & Skip Link Pattern
+**Learning:** In static HTML prototypes, password visibility toggles often lack interactive JavaScript and key accessibility properties (`aria-pressed`, dynamic `aria-label`, focus rings). Additionally, adding right padding (`pr-10`) to password inputs ensures typed password characters do not visually clash with trailing overlay toggle buttons.
+**Action:** When working on login or credential forms, ensure password visibility toggle buttons include `aria-pressed`, dynamic `aria-label`/`title`, focus-visible rings, and proper `pr-10` padding on the input.
