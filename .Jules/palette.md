@@ -1,0 +1,3 @@
+## 2025-05-18 - Input Field Overlay Padding & Dynamic ARIA Toggle Sync
+**Learning:** Adding trailing overlay icons (such as password toggles) requires setting `pr-12` on inputs so revealed passwords do not visually overlap with icon buttons. Additionally, dynamic toggle controls in Spanish prototypes require synchronized updates across `type`, `aria-label`, `title`, `aria-pressed`, `textContent`, and `data-icon` attributes to maintain screen reader consistency.
+**Action:** Always ensure sufficient right-padding (`pr-12`+) on inputs with absolute action overlays and synchronize screen reader attributes when toggling field visibility.
