@@ -1,0 +1,3 @@
+## 2025-05-20 - Password Input Padding and Dynamic ARIA Toggle States
+**Learning:** Adding absolute positioned overlay toggle buttons inside input wrappers causes user text to scroll under the button icon if standard right padding is used (`pr-3`). Setting `pr-10` or `pr-12` provides enough clearance. Furthermore, dynamically toggling `aria-pressed`, `aria-label`, and `title` alongside Material Symbols ligatures and `data-icon` ensures full screen-reader parity.
+**Action:** Always increase right padding on inputs with absolute overlay elements and synchronize `aria-pressed`, `aria-label`, `title`, and `data-icon` on interactive toggle controls.
