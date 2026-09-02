@@ -1,0 +1,3 @@
+## 2025-05-18 - Interactive Password Toggle A11y & Skip Navigation
+**Learning:** In static prototype screens with password fields, icon-only buttons for password toggles often lack accessible labels, focus indicators, and interactive type switching. Providing an interactive vanilla JS toggle with synchronized `aria-label`, `title`, and `aria-pressed` states alongside `pr-10` input padding creates a delightful, fully accessible user experience without requiring heavy external dependencies or frameworks.
+**Action:** Always verify password fields in HTML prototypes for input right-padding and attach accessible `toggle-password` event listeners that update both text content and icon data attributes (`visibility` / `visibility_off`).
