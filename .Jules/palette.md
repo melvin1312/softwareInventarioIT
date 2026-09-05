@@ -1,0 +1,3 @@
+## 2025-09-05 - Accessible Password Visibility Toggling in Spanish Prototypes
+**Learning:** In Spanish static HTML login forms, password visibility buttons require synchronized `aria-label` and `title` switches ("Mostrar contraseña" / "Ocultar contraseña"), dynamic `aria-pressed` states ("false" / "true"), and updating both `textContent` and `data-icon` attributes for Material Symbols icons (`visibility` / `visibility_off`). Input fields must also include adequate right padding (`pr-10`) to prevent long passwords from overlapping absolute-positioned toggle icons.
+**Action:** When adding password unmasking toggles, apply `pr-10` on the input field and manage all ARIA, title, and Material Symbol attributes simultaneously via vanilla JavaScript.
