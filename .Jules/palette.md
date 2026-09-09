@@ -1,0 +1,3 @@
+## 2026-03-31 - Password Visibility Toggle ARIA Sync and Input Padding
+**Learning:** Adding a password visibility toggle requires increasing right-padding on the password input (`pr-10` or `pr-12`) to prevent password text from visually overlapping the eye icon, and synchronizing `aria-pressed`, `aria-label`, `title`, and both `textContent` and `data-icon` attributes when unmasking.
+**Action:** When implementing password toggles, ensure the input wrapper sets appropriate right padding (`pr-10`), update screen-reader state via `aria-pressed="true|false"` alongside dynamic labels in Spanish ('Mostrar contraseña' / 'Ocultar contraseña'), and add visible focus rings (`focus-visible:ring-2 focus-visible:ring-secondary`).
