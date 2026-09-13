@@ -95,6 +95,7 @@
     </style>
 </head>
 <body class="bg-slate-50 text-on-surface">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:ring-2 focus:ring-secondary focus:ring-offset-2">Saltar al contenido principal</a>
 <!-- Side Navigation Shell -->
 <aside class="fixed left-0 top-0 h-screen w-[280px] border-r border-slate-200 bg-slate-50 dark:bg-slate-950 flex flex-col h-full py-6">
 <div class="px-6 mb-8 flex items-center gap-3">
@@ -133,19 +134,19 @@
 </div>
 </aside>
 <!-- Main Content Canvas -->
-<main class="ml-[280px] min-h-screen">
+<main id="main-content" tabindex="-1" class="ml-[280px] min-h-screen outline-none">
 <!-- Top Navigation Bar -->
 <header class="fixed top-0 right-0 left-[280px] h-16 border-b border-slate-200 bg-white dark:bg-slate-900 z-40 flex items-center justify-between px-8 w-full">
 <div class="flex items-center gap-4 flex-1">
-<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-blue-500/20 rounded-lg">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-secondary/20 rounded-lg">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[20px]">search</span>
-<input class="w-full pl-10 pr-4 py-2 bg-slate-100 border-none rounded-lg text-sm focus:ring-0 placeholder:text-slate-500" placeholder="Buscar empleado por nombre o ID..." type="text"/>
+<input aria-label="Buscar empleado por nombre o ID" class="w-full pl-10 pr-4 py-2 bg-slate-100 border-none rounded-lg text-sm focus:ring-2 focus:ring-secondary focus:outline-none placeholder:text-slate-500" placeholder="Buscar empleado por nombre o ID..." type="text"/>
 </div>
 </div>
 <div class="flex items-center gap-6">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-slate-600 hover:text-blue-600 cursor-pointer">notifications</span>
-<span class="material-symbols-outlined text-slate-600 hover:text-blue-600 cursor-pointer">history</span>
+<button aria-label="Notificaciones" title="Notificaciones" class="material-symbols-outlined text-slate-600 hover:text-blue-600 cursor-pointer rounded-lg p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary">notifications</button>
+<button aria-label="Historial de actividad" title="Historial de actividad" class="material-symbols-outlined text-slate-600 hover:text-blue-600 cursor-pointer rounded-lg p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary">history</button>
 </div>
 <div class="h-8 w-[1px] bg-slate-200"></div>
 <div class="flex items-center gap-3">
@@ -219,10 +220,10 @@
 <p class="text-xs text-slate-500">4 dispositivos totales vinculados a este empleado</p>
 </div>
 <div class="flex gap-2">
-<button class="p-2 text-slate-400 hover:text-blue-600 transition-colors">
+<button aria-label="Filtrar activos" title="Filtrar activos" class="p-2 text-slate-400 hover:text-blue-600 transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
 <span class="material-symbols-outlined">filter_list</span>
 </button>
-<button class="p-2 text-slate-400 hover:text-blue-600 transition-colors">
+<button aria-label="Imprimir lista de activos" title="Imprimir lista de activos" class="p-2 text-slate-400 hover:text-blue-600 transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
 <span class="material-symbols-outlined">print</span>
 </button>
 </div>
@@ -250,7 +251,7 @@
                                             </span>
 </div>
 </div>
-<button class="text-slate-300 hover:text-red-500 transition-colors">
+<button aria-label="Solicitar devolución de activo" title="Solicitar devolución de activo" class="text-slate-300 hover:text-red-500 transition-colors p-1.5 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
 <span class="material-symbols-outlined">assignment_return</span>
 </button>
 </div>
@@ -276,7 +277,7 @@
                                             </span>
 </div>
 </div>
-<button class="text-slate-300 hover:text-red-500 transition-colors">
+<button aria-label="Solicitar devolución de activo" title="Solicitar devolución de activo" class="text-slate-300 hover:text-red-500 transition-colors p-1.5 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
 <span class="material-symbols-outlined">assignment_return</span>
 </button>
 </div>
@@ -302,7 +303,7 @@
                                             </span>
 </div>
 </div>
-<button class="text-slate-300 hover:text-red-500 transition-colors">
+<button aria-label="Solicitar devolución de activo" title="Solicitar devolución de activo" class="text-slate-300 hover:text-red-500 transition-colors p-1.5 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
 <span class="material-symbols-outlined">assignment_return</span>
 </button>
 </div>
@@ -328,7 +329,7 @@
                                             </span>
 </div>
 </div>
-<button class="text-slate-300 hover:text-red-500 transition-colors">
+<button aria-label="Solicitar devolución de activo" title="Solicitar devolución de activo" class="text-slate-300 hover:text-red-500 transition-colors p-1.5 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
 <span class="material-symbols-outlined">assignment_return</span>
 </button>
 </div>
