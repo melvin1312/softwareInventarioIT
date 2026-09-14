@@ -104,8 +104,9 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface min-h-screen flex items-center justify-center p-6">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:ring-2 focus:ring-secondary focus:ring-offset-2">Saltar al contenido principal</a>
 <!-- Login Container -->
-<main class="grid lg:grid-cols-2 max-w-5xl w-full bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm min-h-[640px]">
+<main id="main-content" tabindex="-1" class="grid lg:grid-cols-2 max-w-5xl w-full bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm min-h-[640px] outline-none">
 <!-- Left Column: Visual/Security Messaging -->
 <section class="hidden lg:flex flex-col justify-between p-12 bg-primary-container text-white relative overflow-hidden">
 <div class="relative z-10">
@@ -168,8 +169,8 @@
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
 <span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
-<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button">
+<input class="block w-full pl-10 pr-12 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button id="toggle-password" aria-label="Mostrar contraseña" title="Mostrar contraseña" aria-pressed="false" class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 rounded transition-colors" type="button">
 <span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
 </button>
 </div>
@@ -195,6 +196,31 @@
 </div>
 </section>
 </main>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const passwordInput = document.getElementById('password');
+    const toggleButton = document.getElementById('toggle-password');
+    if (toggleButton && passwordInput) {
+      toggleButton.addEventListener('click', () => {
+        const isPassword = passwordInput.getAttribute('type') === 'password';
+        const newType = isPassword ? 'text' : 'password';
+        const iconName = isPassword ? 'visibility_off' : 'visibility';
+        const labelText = isPassword ? 'Ocultar contraseña' : 'Mostrar contraseña';
+
+        passwordInput.setAttribute('type', newType);
+        toggleButton.setAttribute('aria-label', labelText);
+        toggleButton.setAttribute('title', labelText);
+        toggleButton.setAttribute('aria-pressed', isPassword ? 'true' : 'false');
+
+        const iconElement = toggleButton.querySelector('.material-symbols-outlined');
+        if (iconElement) {
+          iconElement.textContent = iconName;
+          iconElement.setAttribute('data-icon', iconName);
+        }
+      });
+    }
+  });
+</script>
 <!-- Subtly floating security badge for mobile/desktop background -->
 <div class="fixed bottom-8 right-8 pointer-events-none opacity-20 lg:opacity-40 select-none">
 <div class="flex flex-col items-end">
