@@ -1,0 +1,3 @@
+## 2025-02-23 - Interactive Password Visibility & Focus Management
+**Learning:** For static HTML prototypes containing masked password fields, adding an interactive password visibility toggle with dynamic ARIA properties (`aria-pressed`, localized `aria-label`, and `title`) along with skip-to-content focus management provides critical keyboard accessibility and user feedback without breaking layout constraints.
+**Action:** Always complement password fields with an accessible toggle button, adjust input padding (`pr-12`) to prevent text overlap, and synchronize `type`, `textContent`, `data-icon`, and `aria-pressed` states.
