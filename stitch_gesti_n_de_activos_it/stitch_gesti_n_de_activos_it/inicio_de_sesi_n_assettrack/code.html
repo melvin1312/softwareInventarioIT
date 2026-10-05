@@ -104,8 +104,11 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface min-h-screen flex items-center justify-center p-6">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-secondary focus:text-white focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+    Saltar al contenido principal
+</a>
 <!-- Login Container -->
-<main class="grid lg:grid-cols-2 max-w-5xl w-full bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm min-h-[640px]">
+<main id="main-content" tabindex="-1" class="grid lg:grid-cols-2 max-w-5xl w-full bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant shadow-sm min-h-[640px] outline-none">
 <!-- Left Column: Visual/Security Messaging -->
 <section class="hidden lg:flex flex-col justify-between p-12 bg-primary-container text-white relative overflow-hidden">
 <div class="relative z-10">
@@ -168,9 +171,9 @@
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
 <span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
-<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors" type="button">
-<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<input class="block w-full pl-10 pr-10 py-3 border border-outline-variant rounded-lg bg-surface text-body-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button id="toggle-password" aria-label="Mostrar contraseña" aria-pressed="false" class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-r-lg" type="button">
+<span id="toggle-password-icon" class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
 </button>
 </div>
 </div>
@@ -202,4 +205,26 @@
 <span class="font-mono-md text-mono-md text-on-surface-variant">Ver. 4.2.0-Production</span>
 </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const togglePasswordBtn = document.getElementById('toggle-password');
+    const passwordInput = document.getElementById('password');
+    const toggleIcon = document.getElementById('toggle-password-icon');
+
+    if (togglePasswordBtn && passwordInput && toggleIcon) {
+        togglePasswordBtn.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            togglePasswordBtn.setAttribute('aria-pressed', isPassword ? 'true' : 'false');
+            const label = isPassword ? 'Ocultar contraseña' : 'Mostrar contraseña';
+            togglePasswordBtn.setAttribute('aria-label', label);
+            togglePasswordBtn.setAttribute('title', label);
+            const iconName = isPassword ? 'visibility_off' : 'visibility';
+            toggleIcon.textContent = iconName;
+            toggleIcon.setAttribute('data-icon', iconName);
+        });
+    }
+});
+</script>
 </body></html>
