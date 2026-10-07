@@ -106,6 +106,7 @@
     </style>
 </head>
 <body class="bg-slate-50 text-on-surface font-body-md overflow-hidden">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 bg-secondary text-white px-4 py-2 rounded-lg font-medium shadow-lg outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">Saltar al contenido principal</a>
 <!-- SideNavBar -->
 <aside class="fixed left-0 top-0 h-screen w-[280px] border-r border-slate-200 bg-slate-50 flex flex-col h-full py-6">
 <div class="px-6 mb-8 flex items-center gap-3">
@@ -149,13 +150,13 @@
 <div class="flex items-center flex-1 max-w-xl">
 <div class="relative w-full group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors">search</span>
-<input class="w-full pl-10 pr-4 py-2 bg-slate-100 border-none rounded-lg text-sm focus:ring-2 focus:ring-blue-500/20 transition-all outline-none" placeholder="Buscar activos, usuarios o licencias..." type="text"/>
+<input aria-label="Buscar activos, usuarios o licencias" class="w-full pl-10 pr-4 py-2 bg-slate-100 border-none rounded-lg text-sm focus:ring-2 focus:ring-blue-500/20 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 transition-all outline-none" placeholder="Buscar activos, usuarios o licencias..." type="text"/>
 </div>
 </div>
 <div class="flex items-center gap-6">
 <div class="flex items-center gap-4 text-slate-600">
-<button class="hover:text-blue-600 transition-colors"><span class="material-symbols-outlined">notifications</span></button>
-<button class="hover:text-blue-600 transition-colors"><span class="material-symbols-outlined">history</span></button>
+<button aria-label="Notificaciones" class="hover:text-blue-600 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 rounded transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+<button aria-label="Historial" class="hover:text-blue-600 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 rounded transition-colors"><span class="material-symbols-outlined">history</span></button>
 </div>
 <div class="h-8 w-[1px] bg-slate-200"></div>
 <div class="flex items-center gap-3">
@@ -168,7 +169,7 @@
 </div>
 </header>
 <!-- Main Content -->
-<main class="ml-[280px] pt-16 h-screen overflow-y-auto">
+<main id="main-content" tabindex="-1" class="ml-[280px] pt-16 h-screen overflow-y-auto outline-none">
 <div class="p-8">
 <div class="flex items-center justify-between mb-8">
 <div>
@@ -199,33 +200,33 @@
 <div class="grid grid-cols-2 gap-6">
 <!-- Select Asset -->
 <div class="space-y-2">
-<label class="text-label-md text-slate-500 uppercase">Seleccionar Activo</label>
+<label for="asset-id" class="text-label-md text-slate-500 uppercase">Seleccionar Activo</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">devices</span>
-<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" placeholder="ID de Activo o No. Serie..." type="text"/>
+<input id="asset-id" class="w-full pl-10 pr-20 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 transition-all outline-none" placeholder="ID de Activo o No. Serie..." type="text"/>
 <div class="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] bg-slate-100 px-2 py-1 rounded text-slate-500 font-mono">Buscable</div>
 </div>
 </div>
 <!-- Select User -->
 <div class="space-y-2">
-<label class="text-label-md text-slate-500 uppercase">Asignar a Usuario</label>
+<label for="user-id" class="text-label-md text-slate-500 uppercase">Asignar a Usuario</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">person</span>
-<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" placeholder="Nombre de empleado o Email..." type="text"/>
+<input id="user-id" class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 transition-all outline-none" placeholder="Nombre de empleado o Email..." type="text"/>
 </div>
 </div>
 <!-- Date -->
 <div class="space-y-2">
-<label class="text-label-md text-slate-500 uppercase">Fecha de Asignación</label>
+<label for="assignment-date" class="text-label-md text-slate-500 uppercase">Fecha de Asignación</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">calendar_today</span>
-<input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none" type="date" value="2023-10-27"/>
+<input id="assignment-date" class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 transition-all outline-none" type="date" value="2023-10-27"/>
 </div>
 </div>
 <!-- Status -->
 <div class="space-y-2">
-<label class="text-label-md text-slate-500 uppercase">Prioridad / Urgencia</label>
-<select class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none bg-white">
+<label for="priority-select" class="text-label-md text-slate-500 uppercase">Prioridad / Urgencia</label>
+<select id="priority-select" class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 transition-all outline-none bg-white">
 <option>Estándar</option>
 <option>Urgente (Reemplazo)</option>
 <option>Nuevo Ingreso</option>
@@ -234,8 +235,8 @@
 </div>
 <!-- Notes -->
 <div class="space-y-2">
-<label class="text-label-md text-slate-500 uppercase">Notas de Condición / Observaciones</label>
-<textarea class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 transition-all outline-none resize-none" placeholder="Especifique el estado físico, daños previos o componentes incluidos..." rows="4"></textarea>
+<label for="notes-input" class="text-label-md text-slate-500 uppercase">Notas de Condición / Observaciones</label>
+<textarea id="notes-input" class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500/10 focus:border-blue-600 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 transition-all outline-none resize-none" placeholder="Especifique el estado físico, daños previos o componentes incluidos..." rows="4"></textarea>
 </div>
 <div class="pt-4 flex items-center justify-between">
 <div class="flex items-center gap-2 text-sm text-slate-500">
