@@ -1,0 +1,3 @@
+## 2025-05-15 - Password Toggle Accessibility in Absolute Overlay Inputs
+**Learning:** When adding a password unmasking toggle inside an input container, standard `pr-3` padding causes password characters to render directly underneath the toggle button icon. Adding `pr-10` padding guarantees proper visual separation. Furthermore, aria-pressed, aria-label, title, textContent, and data-icon attributes must all be synchronized dynamically upon toggle to support both screen readers and Material Symbol rendering.
+**Action:** Always set `pr-10` or `pr-12` on input elements with trailing button overlays, and update aria-pressed along with localized labels when toggling state.
