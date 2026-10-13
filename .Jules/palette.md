@@ -1,0 +1,3 @@
+## 2025-05-18 - Accessible Password Visibility Toggles & Skip Links
+**Learning:** Password visibility toggles in Spanish UI prototypes require synchronized state updates (`aria-pressed`, dynamic `aria-label`/`title` between 'Mostrar contraseña' and 'Ocultar contraseña', and icon `data-icon` attributes). Also, password inputs with trailing absolute action buttons need right padding (`pr-10`) to prevent visual overlap.
+**Action:** When adding password visibility toggles, ensure dynamic ARIA attributes, material icon text/data-icon updates, and appropriate input padding are included alongside standard focus rings and skip-to-content targets.
