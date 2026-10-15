@@ -1,0 +1,3 @@
+## 2025-05-18 - Keyboard Navigation & Password Unmasking Accessibility
+**Learning:** Adding interactive controls like password toggles inside input wrappers requires adjusting right padding (e.g. `pr-10`) to prevent text overlap. For screen reader users, synchronizing `aria-pressed`, `aria-label`, `title`, text content, and `data-icon` attributes on toggle gives full clarity across different assistive technologies. Additionally, setting `tabindex="-1"` and `outline-none` on `<main id="main-content">` ensures seamless skip-link focusing without unnatural focus outlines.
+**Action:** Always verify right padding on input action overlays and ensure skip link targets are programmatically focusable with `tabindex="-1"`.
