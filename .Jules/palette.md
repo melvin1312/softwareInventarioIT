@@ -1,0 +1,3 @@
+## 2023-10-16 - Accessible Skip Link & Password Visibility Toggle
+**Learning:** Adding `tabindex="-1"` and `outline-none` to the `<main>` element allows skip-to-content links to set immediate keyboard focus without an unsightly ring on the container. When implementing password unmasking toggles, synchronizing `aria-pressed`, `aria-label`, `title`, textContent, and `data-icon` attributes ensures seamless screen reader and visual consistency.
+**Action:** Always include skip links with proper `<main tabindex="-1">` targets and synchronize ARIA attributes alongside DOM mutations for interactive controls.
