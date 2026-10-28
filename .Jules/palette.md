@@ -1,0 +1,3 @@
+## 2025-05-18 - Interactive Password Toggle & Keyboard Skip Link on Login Screen
+**Learning:** Adding interactive password toggling with synchronized `aria-pressed`, dynamic `aria-label`/`title`, icon ligature switching, and `pr-10` input padding significantly improves accessibility and usability for password management on Spanish login interfaces.
+**Action:** When working on login forms, ensure password visibility toggles update `aria-pressed` ("true"/"false"), localized `aria-label`/`title`, `textContent`, and `data-icon` attributes while providing `pr-10` padding on the password field to avoid visual overlap.
