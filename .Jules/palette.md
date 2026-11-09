@@ -1,0 +1,3 @@
+## 2024-11-09 - Accessible Password Visibility Toggle & Skip Link Pattern
+**Learning:** In authentication prototypes, static visual icons (like password visibility toggle eyes) lead to frustration if they lack keyboard focus styles, ARIA pressed/label state synchronization, or if user inputs lack proper right-side clearance padding causing long text to overlap.
+**Action:** When adding password unmasking toggles, pair `pr-11` or `pr-12` padding on the input with `aria-pressed`, dynamic `aria-label`/`title`, and update both `span.textContent` and `data-icon` for Material Symbols ligatures. Ensure `Saltar al contenido principal` skip link is present and targets `<main tabindex="-1">` with `outline-none`.
