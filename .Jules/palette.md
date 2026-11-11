@@ -1,0 +1,3 @@
+## 2025-05-14 - Password Visibility Toggle & Skip Link Accessibility in Login Flow
+**Learning:** In Spanish enterprise login screens using Material Symbols ligatures with Tailwind, password visibility toggles require synchronized screen reader states (`aria-pressed`, `aria-label`, `title`), `data-icon` syncing alongside textContent, and right padding (`pr-10`) to prevent user text colliding with absolute-positioned action buttons.
+**Action:** When implementing password toggles or input action overlays, ensure `pr-10` or `pr-12` on the input, keep ARIA attributes strictly bilingual-appropriate, and provide clear focus-visible rings using the brand secondary token (`focus-visible:ring-secondary`).
